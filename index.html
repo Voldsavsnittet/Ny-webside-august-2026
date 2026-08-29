@@ -21,15 +21,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* DESIGNSYSTEM — tokens (brukes som literaler i inline styles)
-   Farger: papir #F4F2EC · papir-alt #EAE6DC · dyp #132444 · dyp-2 #0C1730
+   Farger: papir #FCFBF9 · papir-alt #F2F0EC · dyp #132444 · dyp-2 #0C1730
            blekk #16213C · brødtekst #3C4459 · dempet #6A7186
-           linje #DCD7CA · linje-dyp rgba(255,255,255,.20)
+           linje #E6E3DD · linje-dyp rgba(255,255,255,.20)
            aksent #9C5C1C · aksent-lys #E0A868 · status-åpen #2C5B3B
    Type:  display/nav/knapp = Archivo · ingress/brødtekst = Source Serif 4 · metadata = IBM Plex Mono
    Radius: 2px · Maks bredde: 1320px · Tekstmål: 68ch */
 *{box-sizing:border-box}
 *,*::before,*::after{font-family:Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif!important}
-body{margin:0;background:#F4F2EC;color:#16213C;-webkit-font-smoothing:antialiased;font-family:Archivo,"Helvetica Neue",Helvetica,sans-serif}
+body{margin:0;background:#FCFBF9;color:#16213C;-webkit-font-smoothing:antialiased;font-family:Archivo,"Helvetica Neue",Helvetica,sans-serif}
 a{color:#9C5C1C}
 a:hover{color:#16213C}
 :focus-visible{outline:3px solid #9C5C1C;outline-offset:3px}
@@ -42,11 +42,11 @@ ul,ol{padding:0;list-style:none}
 
 <a href="#innhold" style="position:absolute;left:-9999px;top:0;background:#132444;color:#fff;padding:12px 18px;z-index:200;font:500 14px Archivo,sans-serif" style-focus="left:12px;top:12px;position:fixed">Til hovedinnhold</a>
 
-<header style="position:sticky;top:0;z-index:60;background:#F4F2EC;border-bottom:1px solid #DCD7CA">
+<header style="position:sticky;top:0;z-index:60;background:#FCFBF9;border-bottom:1px solid #E6E3DD">
   <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:78px">
     <a href="#/" aria-label="Voldsavsnittet – til forsiden" style="text-decoration:none;display:flex;align-items:center;gap:clamp(12px,1.4vw,18px);padding:10px 0;flex:none">
       <img src="assets/logo-vs-horisontal.png" alt="Voldsavsnittet" style="display:block;height:clamp(34px,3.6vw,42px);width:auto;flex:none">
-      <span style="display:block;width:1px;height:clamp(28px,3vw,34px);background:#DCD7CA;flex:none"></span>
+      <span style="display:block;width:1px;height:clamp(28px,3vw,34px);background:#E6E3DD;flex:none"></span>
       <span style="display:block;font:400 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#6A7186;text-transform:uppercase">En del av<br>Omsorgsjuss</span>
     </a>
     <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
@@ -56,7 +56,7 @@ ul,ol{padding:0;list-style:none}
         <a href="#/innsikt" style="font:500 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:10px 0;border-bottom:1px solid transparent" style-hover="border-bottom-color:#16213C">Innsikt</a>
         <a href="#/rettspolitikk" style="font:500 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:10px 0;border-bottom:1px solid transparent" style-hover="border-bottom-color:#16213C">Rettspolitikk</a>
         <a href="#/om-oss" style="font:500 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:10px 0;border-bottom:1px solid transparent" style-hover="border-bottom-color:#16213C">Om oss</a>
-        <a href="#/kurs" style="font:600 15px/1 Archivo,sans-serif;color:#F4F2EC;background:#132444;text-decoration:none;padding:15px 24px;border-radius:2px" style-hover="background:#9C5C1C;color:#fff">Se kurs</a>
+        <a href="#/kurs" style="font:600 15px/1 Archivo,sans-serif;color:#FCFBF9;background:#132444;text-decoration:none;padding:15px 24px;border-radius:2px" style-hover="background:#9C5C1C;color:#fff">Se kurs</a>
       </nav>
     </sc-if>
     <sc-if value="{{ mobil }}">
@@ -67,12 +67,12 @@ ul,ol{padding:0;list-style:none}
     </sc-if>
   </div>
   <sc-if value="{{ navOpen }}">
-    <nav aria-label="Hovedmeny" style="border-top:1px solid #DCD7CA;background:#F4F2EC;padding:8px clamp(20px,5vw,72px) 28px;display:flex;flex-direction:column">
-      <a href="#/kurs" onClick="{{ closeNav }}" style="font:500 19px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:20px 0;border-bottom:1px solid #DCD7CA">Kurs</a>
-      <a href="#/lokale-kurs" onClick="{{ closeNav }}" style="font:500 19px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:20px 0;border-bottom:1px solid #DCD7CA">Lokale kurs</a>
-      <a href="#/innsikt" onClick="{{ closeNav }}" style="font:500 19px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:20px 0;border-bottom:1px solid #DCD7CA">Innsikt</a>
-      <a href="#/rettspolitikk" onClick="{{ closeNav }}" style="font:500 19px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:20px 0;border-bottom:1px solid #DCD7CA">Rettspolitikk</a>
-      <a href="#/om-oss" onClick="{{ closeNav }}" style="font:500 19px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:20px 0;border-bottom:1px solid #DCD7CA">Om oss</a>
+    <nav aria-label="Hovedmeny" style="border-top:1px solid #E6E3DD;background:#FCFBF9;padding:8px clamp(20px,5vw,72px) 28px;display:flex;flex-direction:column">
+      <a href="#/kurs" onClick="{{ closeNav }}" style="font:500 19px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:20px 0;border-bottom:1px solid #E6E3DD">Kurs</a>
+      <a href="#/lokale-kurs" onClick="{{ closeNav }}" style="font:500 19px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:20px 0;border-bottom:1px solid #E6E3DD">Lokale kurs</a>
+      <a href="#/innsikt" onClick="{{ closeNav }}" style="font:500 19px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:20px 0;border-bottom:1px solid #E6E3DD">Innsikt</a>
+      <a href="#/rettspolitikk" onClick="{{ closeNav }}" style="font:500 19px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:20px 0;border-bottom:1px solid #E6E3DD">Rettspolitikk</a>
+      <a href="#/om-oss" onClick="{{ closeNav }}" style="font:500 19px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:20px 0;border-bottom:1px solid #E6E3DD">Om oss</a>
       <a href="#/vilkar" onClick="{{ closeNav }}" style="font:400 15px/1 Archivo,sans-serif;color:#6A7186;text-decoration:none;padding:20px 0">Påmeldings- og bestillingsvilkår</a>
     </nav>
   </sc-if>
@@ -83,38 +83,38 @@ ul,ol{padding:0;list-style:none}
 <!-- ============ HOVEDSIDE ============ -->
 <sc-if value="{{ erHjem }}" hint-placeholder-val="{{ true }}">
 <div>
-  <section aria-labelledby="hero-t" style="border-bottom:1px solid #DCD7CA">
+  <section aria-labelledby="hero-t" style="border-bottom:1px solid #E6E3DD">
     <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,9vw,132px) clamp(20px,5vw,72px) clamp(48px,6vw,88px);display:flex;flex-wrap:wrap;gap:clamp(40px,6vw,96px)">
       <div style="flex:1 1 560px;min-width:0">
         <p style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#9C5C1C">Vår misjon</p>
         <h1 id="hero-t" style="margin-top:28px;font:600 clamp(44px,8.4vw,124px)/0.92 Archivo,sans-serif;letter-spacing:-.035em;color:#16213C;text-wrap:balance">Forebygge.<br>Avdekke.<br>Avverge.</h1>
         <p style="margin-top:clamp(28px,3vw,44px);max-width:60ch;font:400 clamp(19px,1.55vw,24px)/1.55 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Voldsavsnittet arbeider for å styrke samfunnets evne til å forebygge, avdekke og begrense konsekvensene av vold mot særlig utsatte personer og vold i nære relasjoner. Vi arbeider i skjæringspunktet mellom fenomenforståelse, juss, praksis og systemforbedring.</p>
         <div style="margin-top:clamp(32px,3.5vw,48px);display:flex;flex-wrap:wrap;gap:14px">
-          <a href="#/kurs" style="font:600 16px/1 Archivo,sans-serif;color:#F4F2EC;background:#132444;text-decoration:none;padding:19px 30px;border-radius:2px" style-hover="background:#9C5C1C;color:#fff">Se kurs</a>
-          <a href="#fagomrader" style="font:600 16px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:19px 30px;border:1px solid #16213C;border-radius:2px" style-hover="background:#EAE6DC">Se våre fagområder</a>
+          <a href="#/kurs" style="font:600 16px/1 Archivo,sans-serif;color:#FCFBF9;background:#132444;text-decoration:none;padding:19px 30px;border-radius:2px" style-hover="background:#9C5C1C;color:#fff">Se kurs</a>
+          <a href="#fagomrader" style="font:600 16px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:19px 30px;border:1px solid #16213C;border-radius:2px" style-hover="background:#F2F0EC">Se våre fagområder</a>
         </div>
       </div>
       <aside style="position:relative;flex:1 1 260px;max-width:400px;min-width:0;align-self:flex-end">
         <img id="hero-merke" src="assets/logo-vs-transp.png" alt="" aria-hidden="true" style="display:block;height:calc(clamp(44px,8.4vw,124px) * 2.1);width:auto;max-width:130%;object-fit:contain;object-position:left center;margin:0 0 clamp(28px,3vw,44px);opacity:.14;pointer-events:none">
         <p style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#6A7186;padding-bottom:16px;border-bottom:1px solid #16213C">Tre virksomhetsområder</p>
-        <a href="#fagomrader" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:20px 0;border-bottom:1px solid #DCD7CA;text-decoration:none;color:#16213C" style-hover="color:#9C5C1C">
+        <a href="#fagomrader" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:20px 0;border-bottom:1px solid #E6E3DD;text-decoration:none;color:#16213C" style-hover="color:#9C5C1C">
           <span style="font:500 20px/1.2 Archivo,sans-serif">Kunnskap</span><span style="font:400 11px 'IBM Plex Mono',monospace;color:#6A7186">01</span>
         </a>
-        <a href="#fagomrader" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:20px 0;border-bottom:1px solid #DCD7CA;text-decoration:none;color:#16213C" style-hover="color:#9C5C1C">
+        <a href="#fagomrader" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:20px 0;border-bottom:1px solid #E6E3DD;text-decoration:none;color:#16213C" style-hover="color:#9C5C1C">
           <span style="font:500 20px/1.2 Archivo,sans-serif">Kompetanse</span><span style="font:400 11px 'IBM Plex Mono',monospace;color:#6A7186">02</span>
         </a>
-        <a href="#fagomrader" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:20px 0;border-bottom:1px solid #DCD7CA;text-decoration:none;color:#16213C" style-hover="color:#9C5C1C">
+        <a href="#fagomrader" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:20px 0;border-bottom:1px solid #E6E3DD;text-decoration:none;color:#16213C" style-hover="color:#9C5C1C">
           <span style="font:500 20px/1.2 Archivo,sans-serif">Systemendring</span><span style="font:400 11px 'IBM Plex Mono',monospace;color:#6A7186">03</span>
         </a>
       </aside>
     </div>
   </section>
 
-  <section aria-labelledby="ansvar-t" style="background:#132444;color:#F4F2EC">
+  <section aria-labelledby="ansvar-t" style="background:#132444;color:#FCFBF9">
     <div style="max-width:1320px;margin:0 auto;padding:clamp(64px,7vw,112px) clamp(20px,5vw,72px);display:flex;flex-wrap:wrap;gap:clamp(40px,6vw,96px)">
       <div style="flex:1 1 300px;min-width:0;max-width:420px">
         <p style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#E0A868">Offentlig ansvar</p>
-        <h2 id="ansvar-t" style="margin-top:24px;font:600 clamp(30px,3.6vw,52px)/1.08 Archivo,sans-serif;letter-spacing:-.02em;color:#F4F2EC;text-wrap:balance">Avvergingsplikt, et medborgeransvar</h2>
+        <h2 id="ansvar-t" style="margin-top:24px;font:600 clamp(30px,3.6vw,52px)/1.08 Archivo,sans-serif;letter-spacing:-.02em;color:#FCFBF9;text-wrap:balance">Avvergingsplikt, et medborgeransvar</h2>
         <p style="margin-top:20px;font:400 clamp(17px,1.3vw,20px)/1.55 'Source Serif 4',Georgia,serif;color:#C9C4B6;text-wrap:pretty">Er ansatte i din kommune trygge på forskjellen mellom varslingsplikt og avvergingsplikt?</p>
       </div>
       <div style="flex:1 1 460px;min-width:0;max-width:68ch">
@@ -133,7 +133,7 @@ ul,ol{padding:0;list-style:none}
     </div>
   </section>
 
-  <section id="fagomrader" aria-labelledby="fag-t" style="border-bottom:1px solid #DCD7CA;scroll-margin-top:90px">
+  <section id="fagomrader" aria-labelledby="fag-t" style="border-bottom:1px solid #E6E3DD;scroll-margin-top:90px">
     <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,112px) clamp(20px,5vw,72px)">
       <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:baseline;justify-content:space-between">
         <h2 id="fag-t" style="font:600 clamp(30px,3.6vw,52px)/1.06 Archivo,sans-serif;letter-spacing:-.025em;max-width:22ch;text-wrap:balance">Hva Voldsavsnittet gjør</h2>
@@ -148,7 +148,7 @@ ul,ol{padding:0;list-style:none}
             <a href="#/innsikt" style="display:inline-block;margin-top:20px;font:600 15px/1 Archivo,sans-serif;color:#9C5C1C;text-decoration:none;border-bottom:1px solid #9C5C1C;padding-bottom:3px" style-hover="color:#16213C;border-bottom-color:#16213C">Se Innsikt</a>
           </div>
         </article>
-        <article style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,72px);padding:clamp(28px,3.4vw,48px) 0;border-top:1px solid #DCD7CA">
+        <article style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,72px);padding:clamp(28px,3.4vw,48px) 0;border-top:1px solid #E6E3DD">
           <p style="flex:0 0 auto;font:400 12px/1 'IBM Plex Mono',monospace;color:#9C5C1C;letter-spacing:.1em;padding-top:10px">02</p>
           <h3 style="flex:1 1 260px;min-width:0;font:600 clamp(26px,2.6vw,38px)/1.1 Archivo,sans-serif;letter-spacing:-.02em">Kompetanse</h3>
           <div style="flex:1 1 420px;min-width:0;max-width:60ch">
@@ -156,7 +156,7 @@ ul,ol{padding:0;list-style:none}
             <a href="#/kurs" style="display:inline-block;margin-top:20px;font:600 15px/1 Archivo,sans-serif;color:#9C5C1C;text-decoration:none;border-bottom:1px solid #9C5C1C;padding-bottom:3px" style-hover="color:#16213C;border-bottom-color:#16213C">Se kurs</a>
           </div>
         </article>
-        <article style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,72px);padding:clamp(28px,3.4vw,48px) 0;border-top:1px solid #DCD7CA;border-bottom:1px solid #DCD7CA">
+        <article style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,72px);padding:clamp(28px,3.4vw,48px) 0;border-top:1px solid #E6E3DD;border-bottom:1px solid #E6E3DD">
           <p style="flex:0 0 auto;font:400 12px/1 'IBM Plex Mono',monospace;color:#9C5C1C;letter-spacing:.1em;padding-top:10px">03</p>
           <h3 style="flex:1 1 260px;min-width:0;font:600 clamp(26px,2.6vw,38px)/1.1 Archivo,sans-serif;letter-spacing:-.02em">Systemendring</h3>
           <div style="flex:1 1 420px;min-width:0;max-width:60ch">
@@ -168,74 +168,74 @@ ul,ol{padding:0;list-style:none}
     </div>
   </section>
 
-  <section aria-labelledby="handle-t" style="background:#0C1730;color:#F4F2EC">
+  <section aria-labelledby="handle-t" style="background:#0C1730;color:#FCFBF9">
     <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,112px) clamp(20px,5vw,72px)">
       <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end;justify-content:space-between">
-        <h2 id="handle-t" style="font:600 clamp(32px,4.6vw,68px)/1.02 Archivo,sans-serif;letter-spacing:-.03em;color:#F4F2EC;max-width:18ch">Når skal du handle?</h2>
+        <h2 id="handle-t" style="font:600 clamp(32px,4.6vw,68px)/1.02 Archivo,sans-serif;letter-spacing:-.03em;color:#FCFBF9;max-width:18ch">Når skal du handle?</h2>
         <p style="font:400 17px/1.6 'Source Serif 4',Georgia,serif;color:#C9C4B6;max-width:42ch">Situasjonene under er de tjenestene faktisk står i. Voldsavsnittet arbeider med hver av dem.</p>
       </div>
       <ul style="margin-top:clamp(40px,5vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:0 clamp(28px,4vw,64px)">
         <li style="padding:28px 0;border-top:1px solid rgba(244,242,236,.24)">
-          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#F4F2EC">Bekymring</p>
+          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#FCFBF9">Bekymring</p>
           <p style="margin-top:12px;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#C9C4B6">Adgangen til å drøfte anonymt har ingen terskel.</p>
         </li>
         <li style="padding:28px 0;border-top:1px solid rgba(244,242,236,.24)">
-          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#F4F2EC">Meldeplikt</p>
+          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#FCFBF9">Meldeplikt</p>
           <p style="margin-top:12px;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#C9C4B6">Meldeplikten til barnevernet utløses ved «grunn til å tro».</p>
         </li>
         <li style="padding:28px 0;border-top:1px solid rgba(244,242,236,.24)">
-          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#F4F2EC">Avvergingsplikt</p>
+          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#FCFBF9">Avvergingsplikt</p>
           <p style="margin-top:12px;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#C9C4B6">Straffeloven § 196. Krever at man holder det for «sikkert eller mest sannsynlig» at handlingen er eller vil bli begått.</p>
         </li>
         <li style="padding:28px 0;border-top:1px solid rgba(244,242,236,.24)">
-          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#F4F2EC">Taushetsplikt</p>
+          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#FCFBF9">Taushetsplikt</p>
           <p style="margin-top:12px;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#C9C4B6">Pliktene går foran taushetsplikten, men de utløses på ulike vilkår og krever ulike reaksjoner.</p>
         </li>
         <li style="padding:28px 0;border-top:1px solid rgba(244,242,236,.24)">
-          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#F4F2EC">Opplysningsplikt</p>
+          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#FCFBF9">Opplysningsplikt</p>
           <p style="margin-top:12px;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#C9C4B6">Hva plikten krever, og hvordan den skiller seg fra de øvrige pliktene, gjennomgås konkret.</p>
         </li>
         <li style="padding:28px 0;border-top:1px solid rgba(244,242,236,.24)">
-          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#F4F2EC">Dokumentasjon</p>
+          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#FCFBF9">Dokumentasjon</p>
           <p style="margin-top:12px;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#C9C4B6">Malverket strukturerer hva den ansatte har sett. Det konkluderer ikke om risiko.</p>
         </li>
         <li style="padding:28px 0;border-top:1px solid rgba(244,242,236,.24)">
-          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#F4F2EC">Risikovurdering</p>
+          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#FCFBF9">Risikovurdering</p>
           <p style="margin-top:12px;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#C9C4B6">Ingen av pliktene krever bevis. Vurderingen skal gjøres før noe er avklart.</p>
         </li>
         <li style="padding:28px 0;border-top:1px solid rgba(244,242,236,.24)">
-          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#F4F2EC">Varsling</p>
+          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#FCFBF9">Varsling</p>
           <p style="margin-top:12px;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#C9C4B6">Hvem som skal varsles i hvilken situasjon: barnevern, helsetjeneste, politi, krisesenter, NAV og boligkontor.</p>
         </li>
         <li style="padding:28px 0;border-top:1px solid rgba(244,242,236,.24)">
-          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#F4F2EC">Overlevering</p>
+          <p style="font:500 clamp(19px,1.5vw,23px)/1.2 Archivo,sans-serif;color:#FCFBF9">Overlevering</p>
           <p style="margin-top:12px;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#C9C4B6">Kan kommunen dokumentere at en bekymringsmelding ble mottatt, journalført og tildelt en saksbehandler? Etter kommuneloven § 25-1 er det kommunens eget ansvar å kunne svare på det.</p>
         </li>
       </ul>
-      <a href="#/kurs/forebygging-og-avverging-av-vold" style="display:inline-block;margin-top:clamp(36px,4vw,56px);font:600 16px/1 Archivo,sans-serif;color:#0C1730;background:#E0A868;text-decoration:none;padding:19px 30px;border-radius:2px" style-hover="background:#F4F2EC;color:#0C1730">Se kurset om forebygging og avverging</a>
+      <a href="#/kurs/forebygging-og-avverging-av-vold" style="display:inline-block;margin-top:clamp(36px,4vw,56px);font:600 16px/1 Archivo,sans-serif;color:#0C1730;background:#E0A868;text-decoration:none;padding:19px 30px;border-radius:2px" style-hover="background:#FCFBF9;color:#0C1730">Se kurset om forebygging og avverging</a>
     </div>
   </section>
 
-  <section aria-labelledby="kurs-t" style="border-bottom:1px solid #DCD7CA">
+  <section aria-labelledby="kurs-t" style="border-bottom:1px solid #E6E3DD">
     <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,112px) clamp(20px,5vw,72px)">
       <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:baseline;justify-content:space-between;padding-bottom:24px;border-bottom:1px solid #16213C">
         <h2 id="kurs-t" style="font:600 clamp(30px,3.4vw,48px)/1.06 Archivo,sans-serif;letter-spacing:-.025em">Kompetanse og kurs</h2>
         <a href="#/kurs" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;border-bottom:1px solid #16213C;padding-bottom:3px">Hele kursoversikten</a>
       </div>
       <sc-for list="{{ apneKurs }}" as="kurs" hint-placeholder-count="1">
-        <article style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,72px);padding:clamp(32px,4vw,56px) 0;border-bottom:1px solid #DCD7CA">
+        <article style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,72px);padding:clamp(32px,4vw,56px) 0;border-bottom:1px solid #E6E3DD">
           <div style="flex:1 1 480px;min-width:0">
             <p style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#9C5C1C">{{ kurs.kicker }}</p>
             <h3 style="margin-top:18px;font:600 clamp(26px,2.8vw,42px)/1.08 Archivo,sans-serif;letter-spacing:-.025em;max-width:24ch;text-wrap:balance"><a href="{{ kurs.href }}" style="color:#16213C;text-decoration:none" style-hover="color:#9C5C1C">{{ kurs.title }}</a></h3>
             <p style="margin-top:20px;max-width:62ch;font:400 clamp(17px,1.2vw,19px)/1.6 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">{{ kurs.excerpt }}</p>
             <div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px">
-              <a href="{{ kurs.href }}" style="font:600 15px/1 Archivo,sans-serif;color:#F4F2EC;background:#132444;text-decoration:none;padding:18px 28px;border-radius:2px" style-hover="background:#9C5C1C">Se kurset</a>
-              <a href="{{ kurs.registrationUrl }}" target="_blank" rel="noopener" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:18px 28px;border:1px solid #16213C;border-radius:2px" style-hover="background:#EAE6DC">Meld deg på</a>
+              <a href="{{ kurs.href }}" style="font:600 15px/1 Archivo,sans-serif;color:#FCFBF9;background:#132444;text-decoration:none;padding:18px 28px;border-radius:2px" style-hover="background:#9C5C1C">Se kurset</a>
+              <a href="{{ kurs.registrationUrl }}" target="_blank" rel="noopener" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:18px 28px;border:1px solid #16213C;border-radius:2px" style-hover="background:#F2F0EC">Meld deg på</a>
             </div>
           </div>
           <dl style="flex:1 1 260px;min-width:0;max-width:360px;margin:0">
             <sc-for list="{{ kurs.facts }}" as="f" hint-placeholder-count="5">
-              <div style="display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-top:1px solid #DCD7CA">
+              <div style="display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-top:1px solid #E6E3DD">
                 <dt style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6A7186">{{ f.label }}</dt>
                 <dd style="margin:0;font:500 15px/1.4 Archivo,sans-serif;color:#16213C;text-align:right">{{ f.value }}</dd>
               </div>
@@ -249,27 +249,27 @@ ul,ol{padding:0;list-style:none}
           <h3 style="margin-top:18px;font:600 clamp(26px,2.8vw,42px)/1.08 Archivo,sans-serif;letter-spacing:-.025em;max-width:24ch"><a href="#/lokale-kurs" style="color:#16213C;text-decoration:none" style-hover="color:#9C5C1C">Ta kurset til din kommune</a></h3>
           <p style="margin-top:20px;max-width:62ch;font:400 clamp(17px,1.2vw,19px)/1.6 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Voldsavsnittet kan holde kurset om forebygging og avverging av vold lokalt for én eller flere kommuner — som 2-dagerskurs, dagskurs eller skreddersydd opplegg etter avtale.</p>
           <div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px">
-            <a href="#/lokale-kurs" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:18px 28px;border:1px solid #16213C;border-radius:2px" style-hover="background:#EAE6DC">Les om lokale kurs</a>
-            <a href="{{ tilbudLenke }}" style="font:600 15px/1 Archivo,sans-serif;color:#F4F2EC;background:#132444;text-decoration:none;padding:18px 28px;border-radius:2px" style-hover="background:#9C5C1C">Be om tilbud</a>
+            <a href="#/lokale-kurs" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:18px 28px;border:1px solid #16213C;border-radius:2px" style-hover="background:#F2F0EC">Les om lokale kurs</a>
+            <a href="{{ tilbudLenke }}" onClick="{{ apneEpostModal }}" style="font:600 15px/1 Archivo,sans-serif;color:#FCFBF9;background:#132444;text-decoration:none;padding:18px 28px;border-radius:2px" style-hover="background:#9C5C1C">Be om tilbud</a>
           </div>
         </div>
       </article>
     </div>
   </section>
 
-  <section aria-labelledby="innsikt-t" style="border-bottom:1px solid #DCD7CA">
+  <section aria-labelledby="innsikt-t" style="border-bottom:1px solid #E6E3DD">
     <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,112px) clamp(20px,5vw,72px);display:flex;flex-wrap:wrap;gap:clamp(40px,6vw,88px)">
       <div style="flex:1 1 300px;min-width:0;max-width:420px">
         <h2 id="innsikt-t" style="font:600 clamp(30px,3.4vw,48px)/1.06 Archivo,sans-serif;letter-spacing:-.025em">Innsikt og rettspolitikk</h2>
         <p style="margin-top:24px;font:400 17px/1.6 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Analyser, fagartikler, høringsinnspill og rettspolitiske forslag publiseres her. Området er under oppbygging.</p>
         <div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px">
-          <a href="#/innsikt" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:16px 24px;border:1px solid #16213C;border-radius:2px" style-hover="background:#EAE6DC">Innsikt</a>
-          <a href="#/rettspolitikk" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:16px 24px;border:1px solid #16213C;border-radius:2px" style-hover="background:#EAE6DC">Rettspolitikk</a>
+          <a href="#/innsikt" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:16px 24px;border:1px solid #16213C;border-radius:2px" style-hover="background:#F2F0EC">Innsikt</a>
+          <a href="#/rettspolitikk" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:16px 24px;border:1px solid #16213C;border-radius:2px" style-hover="background:#F2F0EC">Rettspolitikk</a>
         </div>
       </div>
       <ul style="flex:1 1 460px;min-width:0">
         <sc-for list="{{ innsiktPlassholdere }}" as="p" hint-placeholder-count="3">
-          <li style="display:flex;flex-wrap:wrap;gap:8px 28px;align-items:baseline;padding:22px 0;border-top:1px solid #DCD7CA">
+          <li style="display:flex;flex-wrap:wrap;gap:8px 28px;align-items:baseline;padding:22px 0;border-top:1px solid #E6E3DD">
             <p style="flex:0 0 78px;font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#9C5C1C">{{ p.aar }}</p>
             <p style="flex:1 1 240px;min-width:0;font:500 clamp(18px,1.4vw,21px)/1.35 Archivo,sans-serif;color:#16213C">{{ p.tittel }}</p>
             <p style="flex:0 0 auto;font:400 11px/1.4 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.1em;color:#6A7186">{{ p.type }}</p>
@@ -285,14 +285,14 @@ ul,ol{padding:0;list-style:none}
         <p style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#9C5C1C">Fagmiljø</p>
         <h2 id="miljo-t" style="margin-top:24px;font:600 clamp(30px,3.4vw,48px)/1.06 Archivo,sans-serif;letter-spacing:-.025em">Voldsavsnittet er en fagavdeling i <a href="https://www.omsorgsjuss.no/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:#9C5C1C" style-hover="color:#9C5C1C">Omsorgsjuss</a> AS</h2>
         <p style="margin-top:24px;font:400 clamp(17px,1.2vw,19px)/1.62 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Tilknytningen til <a href="https://www.omsorgsjuss.no/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#9C5C1C" style-hover="color:#9C5C1C">Omsorgsjuss</a> gir Voldsavsnittet juridisk fundament og institusjonell forankring. Fagavdelingen har sitt eget mandat: å styrke tjenestenes evne til å forebygge, avdekke og avverge vold.</p>
-        <a href="#/om-oss" style="display:inline-block;margin-top:26px;font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:16px 24px;border:1px solid #16213C;border-radius:2px" style-hover="background:#EAE6DC">Om oss</a>
+        <a href="#/om-oss" style="display:inline-block;margin-top:26px;font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:16px 24px;border:1px solid #16213C;border-radius:2px" style-hover="background:#F2F0EC">Om oss</a>
       </div>
     </div>
   </section>
 
-  <section aria-labelledby="kontakt-t" style="background:#EAE6DC;border-top:1px solid #DCD7CA">
+  <section aria-labelledby="kontakt-t" style="background:#F2F0EC;border-top:1px solid #E6E3DD">
     <div style="max-width:1320px;margin:0 auto;padding:clamp(48px,6vw,88px) clamp(20px,5vw,72px)">
-      <a href="{{ epostLenke }}" style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,72px);align-items:flex-end;justify-content:space-between;padding:clamp(28px,3vw,40px);border:1px solid #16213C;border-radius:2px;background:#F4F2EC;text-decoration:none;color:#16213C" style-hover="background:#16213C;color:#F4F2EC">
+      <a href="{{ epostLenke }}" style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,72px);align-items:flex-end;justify-content:space-between;padding:clamp(28px,3vw,40px);border:1px solid #16213C;border-radius:2px;background:#FCFBF9;text-decoration:none;color:#16213C" style-hover="background:#16213C;color:#FCFBF9">
         <div style="min-width:0">
           <h2 id="kontakt-t" style="font:600 clamp(28px,3.2vw,44px)/1.06 Archivo,sans-serif;letter-spacing:-.025em;max-width:26ch;color:inherit">Skal kommunen styrke arbeidet mot vold?</h2>
           <p style="margin-top:20px;max-width:56ch;font:400 18px/1.6 'Source Serif 4',Georgia,serif;color:inherit">Ta kontakt for åpne kurs, lokale kurs eller skreddersydde kursopplegg.</p>
@@ -317,15 +317,15 @@ ul,ol{padding:0;list-style:none}
       <h1 style="margin-top:24px;font:600 clamp(38px,6vw,84px)/0.98 Archivo,sans-serif;letter-spacing:-.03em;max-width:20ch">Kurs</h1>
       <p style="margin-top:28px;max-width:62ch;font:400 clamp(18px,1.4vw,22px)/1.58 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Kursene retter seg mot ansatte og ledere i kommunal sektor og i virksomheter som utfører kommunale oppgaver. De holdes som åpne kurs, og lokalt for én eller flere kommuner.</p>
     </div>
-    <div style="flex:1 1 320px;max-width:440px;min-width:0;position:relative;background:#F4F2EC">
+    <div style="flex:1 1 320px;max-width:440px;min-width:0;position:relative;background:#FCFBF9">
       <img src="assets/skisse-kurs.png" alt="Blyantskisse av kursleder som underviser en gruppe deltakere" style="display:block;width:100%;height:clamp(200px,22vw,300px);object-fit:cover;object-position:60% 40%;opacity:.55;mix-blend-mode:multiply;filter:grayscale(1) sepia(.42) hue-rotate(178deg) saturate(1.35) contrast(1.05)">
-      <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(244,242,236,0) 45%,#F4F2EC 100%);pointer-events:none"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(244,242,236,0) 45%,#FCFBF9 100%);pointer-events:none"></div>
     </div>
   </div>
   <section aria-label="Åpne kurs" style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
     <p style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#6A7186;padding:clamp(32px,4vw,52px) 0 0">Åpne kurs</p>
     <sc-for list="{{ apneKurs }}" as="kurs" hint-placeholder-count="1">
-      <article style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,72px);padding:clamp(28px,3.5vw,48px) 0;border-bottom:1px solid #DCD7CA">
+      <article style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,72px);padding:clamp(28px,3.5vw,48px) 0;border-bottom:1px solid #E6E3DD">
         <div style="flex:1 1 480px;min-width:0">
           <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
             <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#2C5B3B;border:1px solid #2C5B3B;padding:7px 10px">{{ kurs.availabilityStatus }}</span>
@@ -334,13 +334,13 @@ ul,ol{padding:0;list-style:none}
           <h2 style="margin-top:20px;font:600 clamp(28px,3vw,44px)/1.06 Archivo,sans-serif;letter-spacing:-.025em;max-width:24ch;text-wrap:balance"><a href="{{ kurs.href }}" style="color:#16213C;text-decoration:none" style-hover="color:#9C5C1C">{{ kurs.title }}</a></h2>
           <p style="margin-top:20px;max-width:62ch;font:400 clamp(17px,1.2vw,19px)/1.62 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">{{ kurs.excerpt }}</p>
           <div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px">
-            <a href="{{ kurs.href }}" style="font:600 15px/1 Archivo,sans-serif;color:#F4F2EC;background:#132444;text-decoration:none;padding:18px 28px;border-radius:2px" style-hover="background:#9C5C1C">Se kurset</a>
-            <a href="{{ kurs.registrationUrl }}" target="_blank" rel="noopener" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:18px 28px;border:1px solid #16213C;border-radius:2px" style-hover="background:#EAE6DC">Meld deg på</a>
+            <a href="{{ kurs.href }}" style="font:600 15px/1 Archivo,sans-serif;color:#FCFBF9;background:#132444;text-decoration:none;padding:18px 28px;border-radius:2px" style-hover="background:#9C5C1C">Se kurset</a>
+            <a href="{{ kurs.registrationUrl }}" target="_blank" rel="noopener" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:18px 28px;border:1px solid #16213C;border-radius:2px" style-hover="background:#F2F0EC">Meld deg på</a>
           </div>
         </div>
         <dl style="flex:1 1 260px;min-width:0;max-width:360px;margin:0">
           <sc-for list="{{ kurs.facts }}" as="f" hint-placeholder-count="5">
-            <div style="display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-top:1px solid #DCD7CA">
+            <div style="display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-top:1px solid #E6E3DD">
               <dt style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6A7186">{{ f.label }}</dt>
               <dd style="margin:0;font:500 15px/1.4 Archivo,sans-serif;color:#16213C;text-align:right">{{ f.value }}</dd>
             </div>
@@ -354,20 +354,20 @@ ul,ol{padding:0;list-style:none}
         <h2 style="font:600 clamp(28px,3vw,44px)/1.06 Archivo,sans-serif;letter-spacing:-.025em;max-width:24ch"><a href="#/lokale-kurs" style="color:#16213C;text-decoration:none" style-hover="color:#9C5C1C">Ta kurset til din kommune</a></h2>
         <p style="margin-top:20px;max-width:62ch;font:400 clamp(17px,1.2vw,19px)/1.62 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">2-dagerskurs, dagskurs eller skreddersydd opplegg etter avtale — for én eller flere kommuner. Skreddersøm kan blant annet være relevant ved implementering av TryggEst eller arbeid med konkrete problemstillinger innen forebygging.</p>
         <div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px">
-          <a href="#/lokale-kurs" style="font:600 15px/1 Archivo,sans-serif;color:#F4F2EC;background:#132444;text-decoration:none;padding:18px 28px;border-radius:2px" style-hover="background:#9C5C1C">Les mer</a>
-          <a href="{{ tilbudLenke }}" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:18px 28px;border:1px solid #16213C;border-radius:2px" style-hover="background:#EAE6DC">Be om tilbud</a>
+          <a href="#/lokale-kurs" style="font:600 15px/1 Archivo,sans-serif;color:#FCFBF9;background:#132444;text-decoration:none;padding:18px 28px;border-radius:2px" style-hover="background:#9C5C1C">Les mer</a>
+          <a href="{{ tilbudLenke }}" onClick="{{ apneEpostModal }}" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:18px 28px;border:1px solid #16213C;border-radius:2px" style-hover="background:#F2F0EC">Be om tilbud</a>
         </div>
       </div>
       <dl style="flex:1 1 260px;min-width:0;max-width:360px;margin:0">
-        <div style="display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-top:1px solid #DCD7CA">
+        <div style="display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-top:1px solid #E6E3DD">
           <dt style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6A7186">2-dagerskurs</dt>
           <dd style="margin:0;font:500 15px/1.4 Archivo,sans-serif;text-align:right">106 000 kr</dd>
         </div>
-        <div style="display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-top:1px solid #DCD7CA">
+        <div style="display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-top:1px solid #E6E3DD">
           <dt style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6A7186">Dagskurs</dt>
           <dd style="margin:0;font:500 15px/1.4 Archivo,sans-serif;text-align:right">53 000 kr</dd>
         </div>
-        <div style="display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-top:1px solid #DCD7CA">
+        <div style="display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-top:1px solid #E6E3DD">
           <dt style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6A7186">Inkludert</dt>
           <dd style="margin:0;font:500 15px/1.4 Archivo,sans-serif;text-align:right">Inntil 30 deltakere<br>To kursholdere</dd>
         </div>
@@ -403,25 +403,25 @@ ul,ol{padding:0;list-style:none}
         </section>
       </sc-for>
 
-      <section style="margin-bottom:clamp(36px,4vw,56px);padding-top:clamp(28px,3vw,40px);border-top:1px solid #DCD7CA">
+      <section style="margin-bottom:clamp(36px,4vw,56px);padding-top:clamp(28px,3vw,40px);border-top:1px solid #E6E3DD">
         <h2 style="font:600 clamp(22px,2vw,30px)/1.2 Archivo,sans-serif;letter-spacing:-.015em">Målgruppe</h2>
         <sc-for list="{{ kurs.targetAudience }}" as="para" hint-placeholder-count="3">
           <p style="margin-top:20px;max-width:68ch;font:400 clamp(17px,1.25vw,19px)/1.68 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">{{ para }}</p>
         </sc-for>
       </section>
 
-      <section style="margin-bottom:clamp(36px,4vw,56px);padding-top:clamp(28px,3vw,40px);border-top:1px solid #DCD7CA">
+      <section style="margin-bottom:clamp(36px,4vw,56px);padding-top:clamp(28px,3vw,40px);border-top:1px solid #E6E3DD">
         <h2 style="font:600 clamp(22px,2vw,30px)/1.2 Archivo,sans-serif;letter-spacing:-.015em">Anbefalte forkunnskaper</h2>
         <p style="margin-top:20px;max-width:68ch;font:400 clamp(17px,1.25vw,19px)/1.68 'Source Serif 4',Georgia,serif;color:#2B3348">{{ kurs.prerequisites }}</p>
       </section>
 
-      <section id="program" style="margin-bottom:clamp(36px,4vw,56px);padding-top:clamp(28px,3vw,40px);border-top:1px solid #DCD7CA;scroll-margin-top:100px">
+      <section id="program" style="margin-bottom:clamp(36px,4vw,56px);padding-top:clamp(28px,3vw,40px);border-top:1px solid #E6E3DD;scroll-margin-top:100px">
         <h2 style="font:600 clamp(22px,2vw,30px)/1.2 Archivo,sans-serif;letter-spacing:-.015em">Program</h2>
         <sc-for list="{{ kurs.programme }}" as="dag" hint-placeholder-count="2">
           <div style="margin-top:clamp(28px,3vw,40px)">
             <h3 style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#9C5C1C">{{ dag.title }}</h3>
             <sc-for list="{{ dag.rows }}" as="rad" hint-placeholder-count="4">
-              <div style="display:flex;flex-wrap:wrap;gap:6px 32px;padding:18px 0;border-bottom:1px solid #DCD7CA">
+              <div style="display:flex;flex-wrap:wrap;gap:6px 32px;padding:18px 0;border-bottom:1px solid #E6E3DD">
                 <p style="flex:0 0 120px;font:500 14px/1.5 'IBM Plex Mono',monospace;color:#16213C">{{ rad.time }}</p>
                 <p style="flex:1 1 300px;min-width:0;max-width:56ch;font:400 clamp(16px,1.15vw,18px)/1.6 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">{{ rad.text }}</p>
               </div>
@@ -431,12 +431,12 @@ ul,ol{padding:0;list-style:none}
         <p style="margin-top:20px;font:400 12px/1.5 'IBM Plex Mono',monospace;color:#6A7186">Det kan komme endringer i programmet.</p>
       </section>
 
-      <section style="margin-bottom:clamp(36px,4vw,56px);padding-top:clamp(28px,3vw,40px);border-top:1px solid #DCD7CA">
+      <section style="margin-bottom:clamp(36px,4vw,56px);padding-top:clamp(28px,3vw,40px);border-top:1px solid #E6E3DD">
         <h2 style="font:600 clamp(22px,2vw,30px)/1.2 Archivo,sans-serif;letter-spacing:-.015em">Kursholdere</h2>
         <div style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px">
           <sc-for list="{{ kurs.instructors }}" as="k" hint-placeholder-count="2">
             <div style="display:flex;gap:20px;align-items:flex-start">
-              <div role="img" aria-label="Portrettplassholder" style="flex:0 0 72px;height:90px;background:repeating-linear-gradient(135deg,#E4E0D5 0 7px,#EAE6DC 7px 14px);border:1px solid #DCD7CA"></div>
+              <div role="img" aria-label="Portrettplassholder" style="flex:0 0 72px;height:90px;background:repeating-linear-gradient(135deg,#E4E0D5 0 7px,#F2F0EC 7px 14px);border:1px solid #E6E3DD"></div>
               <div style="min-width:0">
                 <p style="font:600 19px/1.25 Archivo,sans-serif">{{ k.name }}</p>
                 <p style="margin-top:8px;font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6A7186">{{ k.role }}</p>
@@ -446,11 +446,11 @@ ul,ol{padding:0;list-style:none}
         </div>
       </section>
 
-      <section style="padding-top:clamp(28px,3vw,40px);border-top:1px solid #DCD7CA">
+      <section style="padding-top:clamp(28px,3vw,40px);border-top:1px solid #E6E3DD">
         <h2 style="font:600 clamp(22px,2vw,30px)/1.2 Archivo,sans-serif;letter-spacing:-.015em">Praktisk informasjon</h2>
         <dl style="margin-top:20px;max-width:520px">
           <sc-for list="{{ kurs.facts }}" as="f" hint-placeholder-count="5">
-            <div style="display:flex;justify-content:space-between;gap:24px;padding:14px 0;border-bottom:1px solid #DCD7CA">
+            <div style="display:flex;justify-content:space-between;gap:24px;padding:14px 0;border-bottom:1px solid #E6E3DD">
               <dt style="font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6A7186">{{ f.label }}</dt>
               <dd style="margin:0;font:500 16px/1.4 Archivo,sans-serif;text-align:right">{{ f.value }}</dd>
             </div>
@@ -464,22 +464,22 @@ ul,ol{padding:0;list-style:none}
     </div>
 
     <aside style="flex:1 1 300px;min-width:0;max-width:400px;position:sticky;top:100px;padding:clamp(32px,4vw,48px) 0">
-      <div style="background:#132444;color:#F4F2EC;padding:clamp(24px,2.4vw,32px)">
+      <div style="background:#132444;color:#FCFBF9;padding:clamp(24px,2.4vw,32px)">
         <p style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#E0A868">Åpent kurs</p>
         <dl style="margin-top:20px">
           <sc-for list="{{ kurs.facts }}" as="f" hint-placeholder-count="5">
             <div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid rgba(244,242,236,.22)">
               <dt style="font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#C9C4B6">{{ f.label }}</dt>
-              <dd style="margin:0;font:500 15px/1.4 Archivo,sans-serif;color:#F4F2EC;text-align:right">{{ f.value }}</dd>
+              <dd style="margin:0;font:500 15px/1.4 Archivo,sans-serif;color:#FCFBF9;text-align:right">{{ f.value }}</dd>
             </div>
           </sc-for>
         </dl>
-        <a href="{{ kurs.registrationUrl }}" target="_blank" rel="noopener" style="display:block;margin-top:26px;text-align:center;font:600 16px/1 Archivo,sans-serif;color:#0C1730;background:#E0A868;text-decoration:none;padding:20px 24px;border-radius:2px" style-hover="background:#F4F2EC">Meld deg på</a>
+        <a href="{{ kurs.registrationUrl }}" target="_blank" rel="noopener" style="display:block;margin-top:26px;text-align:center;font:600 16px/1 Archivo,sans-serif;color:#0C1730;background:#E0A868;text-decoration:none;padding:20px 24px;border-radius:2px" style-hover="background:#FCFBF9">Meld deg på</a>
         <p style="margin-top:14px;font:400 12px/1.55 'IBM Plex Mono',monospace;color:#C9C4B6">Påmelding skjer i <a href="https://www.omsorgsjuss.no/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px" style-hover="color:#E0A868">Omsorgsjuss</a>' påmeldingssystem. Ikke bindende før påmeldingsfristen.</p>
       </div>
       <nav aria-label="På denne siden" style="margin-top:28px;border-top:1px solid #16213C;padding-top:18px">
-        <a href="#program" style="display:block;font:500 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:12px 0;border-bottom:1px solid #DCD7CA" style-hover="color:#9C5C1C">Program</a>
-        <a href="#/lokale-kurs" style="display:block;font:500 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:12px 0;border-bottom:1px solid #DCD7CA" style-hover="color:#9C5C1C">Ta kurset til din kommune</a>
+        <a href="#program" style="display:block;font:500 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:12px 0;border-bottom:1px solid #E6E3DD" style-hover="color:#9C5C1C">Program</a>
+        <a href="#/lokale-kurs" style="display:block;font:500 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:12px 0;border-bottom:1px solid #E6E3DD" style-hover="color:#9C5C1C">Ta kurset til din kommune</a>
         <a href="#/vilkar" style="display:block;font:500 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:12px 0" style-hover="color:#9C5C1C">Vilkår</a>
       </nav>
     </aside>
@@ -487,7 +487,7 @@ ul,ol{padding:0;list-style:none}
   <sc-if value="{{ visStickyCta }}">
     <div style="position:fixed;left:0;right:0;bottom:0;z-index:70;background:#132444;padding:12px 16px;display:flex;align-items:center;gap:14px;justify-content:space-between">
       <div style="min-width:0">
-        <p style="font:500 14px/1.3 Archivo,sans-serif;color:#F4F2EC;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ kurs.dateLabel }}</p>
+        <p style="font:500 14px/1.3 Archivo,sans-serif;color:#FCFBF9;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ kurs.dateLabel }}</p>
         <p style="font:400 11px/1.3 'IBM Plex Mono',monospace;color:#C9C4B6">{{ kurs.price }} · {{ kurs.location }}</p>
       </div>
       <a href="{{ kurs.registrationUrl }}" target="_blank" rel="noopener" style="flex:none;font:600 15px/1 Archivo,sans-serif;color:#0C1730;background:#E0A868;text-decoration:none;padding:16px 22px;border-radius:2px;min-height:48px;display:flex;align-items:center">Meld deg på</a>
@@ -505,13 +505,13 @@ ul,ol{padding:0;list-style:none}
     <h1 style="margin-top:24px;font:600 clamp(36px,5.6vw,84px)/0.98 Archivo,sans-serif;letter-spacing:-.03em;max-width:20ch;text-wrap:balance">Ta kurset til din kommune</h1>
     <p style="margin-top:28px;max-width:64ch;font:400 clamp(18px,1.45vw,23px)/1.55 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Voldsavsnittet kan holde kurset om forebygging og avverging av vold lokalt for én eller flere kommuner. Kurset er særlig nyttig når ansatte fra flere tjenester i samme kommune deltar sammen.</p>
     <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:12px">
-      <a href="{{ tilbudLenke }}" style="font:600 16px/1 Archivo,sans-serif;color:#F4F2EC;background:#132444;text-decoration:none;padding:19px 30px;border-radius:2px" style-hover="background:#9C5C1C">Be om tilbud</a>
-      <a href="#/kurs/forebygging-og-avverging-av-vold" style="font:600 16px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:19px 30px;border:1px solid #16213C;border-radius:2px" style-hover="background:#EAE6DC">Se kursinnholdet</a>
+      <a href="{{ tilbudLenke }}" onClick="{{ apneEpostModal }}" style="font:600 16px/1 Archivo,sans-serif;color:#FCFBF9;background:#132444;text-decoration:none;padding:19px 30px;border-radius:2px" style-hover="background:#9C5C1C">Be om tilbud</a>
+      <a href="#/kurs/forebygging-og-avverging-av-vold" style="font:600 16px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:19px 30px;border:1px solid #16213C;border-radius:2px" style-hover="background:#F2F0EC">Se kursinnholdet</a>
     </div>
     </div>
-    <div style="flex:0 1 380px;min-width:0;position:relative;background:#F4F2EC">
+    <div style="flex:0 1 380px;min-width:0;position:relative;background:#FCFBF9">
       <img src="assets/skisse-lokale-kurs.png" alt="Blyantskisse av ansatte samlet rundt et møtebord" style="display:block;width:100%;height:clamp(220px,24vw,330px);object-fit:cover;object-position:50% 45%;opacity:.55;mix-blend-mode:multiply;filter:grayscale(1) sepia(.42) hue-rotate(178deg) saturate(1.35) contrast(1.05)">
-      <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(244,242,236,0) 45%,#F4F2EC 100%);pointer-events:none"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(244,242,236,0) 45%,#FCFBF9 100%);pointer-events:none"></div>
     </div>
   </div>
 
@@ -527,12 +527,12 @@ ul,ol{padding:0;list-style:none}
         <p style="flex:0 0 auto;font:500 clamp(19px,1.6vw,24px)/1.2 'IBM Plex Mono',monospace">106 000 kr</p>
         <p style="flex:1 1 100%;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">To kursholdere. Fullt kursopplegg over to dager. I tillegg til det som er beskrevet i ingressen, vil dag 2 bestå av utvikling og undervisning og metode som sørger for at ansatte i din kommune jobber likt på tvers av instansene.</p>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:24px 0;border-top:1px solid #DCD7CA;align-items:baseline">
+      <div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:24px 0;border-top:1px solid #E6E3DD;align-items:baseline">
         <p style="flex:1 1 200px;font:600 clamp(21px,1.8vw,26px)/1.2 Archivo,sans-serif">Dagskurs</p>
         <p style="flex:0 0 auto;font:500 clamp(19px,1.6vw,24px)/1.2 'IBM Plex Mono',monospace">53 000 kr</p>
         <p style="flex:1 1 100%;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">To kursholdere. Én kursdag. Samme innhold som <a href="#/kurs" style="color:#16213C;text-decoration:none;border-bottom:1px solid #9C5C1C" style-hover="color:#9C5C1C">åpne kurs</a>, med lokaltilpasning.</p>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:24px 0;border-top:1px solid #DCD7CA;border-bottom:1px solid #DCD7CA;align-items:baseline">
+      <div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:24px 0;border-top:1px solid #E6E3DD;border-bottom:1px solid #E6E3DD;align-items:baseline">
         <p style="flex:1 1 200px;font:600 clamp(21px,1.8vw,26px)/1.2 Archivo,sans-serif">Skreddersøm</p>
         <p style="flex:0 0 auto;font:500 15px/1.2 'IBM Plex Mono',monospace;color:#6A7186">Pris: Etter avtale</p>
         <p style="flex:1 1 100%;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Vi skreddersyr kurs i samarbeid med deg. I vårt team har vi ansatte med erfaring og kompetanse fra en rekke ulike fagområder, alle med spisskompetanse knyttet til å forebygge, avdekke og avverge vold. I samtale med deg skreddersyr vi kurs som treffer dine behov.</p>
@@ -546,9 +546,9 @@ ul,ol{padding:0;list-style:none}
     </div>
   </section>
 
-  <section aria-labelledby="lokkontakt-t" style="background:#132444;color:#F4F2EC">
+  <section aria-labelledby="lokkontakt-t" style="background:#132444;color:#FCFBF9">
     <div style="max-width:1320px;margin:0 auto;padding:clamp(48px,6vw,88px) clamp(20px,5vw,72px)">
-      <a href="{{ tilbudLenke }}" style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,72px);align-items:flex-end;justify-content:space-between;padding:clamp(28px,3vw,40px);border:1px solid rgba(244,242,236,.32);border-radius:2px;text-decoration:none;color:#F4F2EC" style-hover="background:#9C5C1C;border-color:#9C5C1C">
+      <a href="{{ tilbudLenke }}" onClick="{{ apneEpostModal }}" style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,72px);align-items:flex-end;justify-content:space-between;padding:clamp(28px,3vw,40px);border:1px solid rgba(244,242,236,.32);border-radius:2px;text-decoration:none;color:#FCFBF9" style-hover="background:#9C5C1C;border-color:#9C5C1C">
         <div style="min-width:0">
           <h2 id="lokkontakt-t" style="font:600 clamp(28px,3.2vw,46px)/1.06 Archivo,sans-serif;letter-spacing:-.025em;color:inherit;max-width:26ch">Spørsmål eller ønsker du et tilbud?</h2>
           <p style="margin-top:20px;max-width:56ch;font:400 18px/1.62 'Source Serif 4',Georgia,serif;color:#E7E3D8">Send oss e-post eller ring. Oppgi gjerne kommune, ønsket form, omtrentlig antall deltakere og tidsrom.</p>
@@ -590,32 +590,32 @@ ul,ol{padding:0;list-style:none}
         <p style="margin-top:16px;max-width:68ch;font:400 17px/1.68 'Source Serif 4',Georgia,serif;color:#2B3348">Betalingsfrist er 14 dager. Ved forsinket betaling kan betalingspåminnelse og/eller inkassovarsel sendes og lovbestemte gebyrer påløpe. Ved fortsatt manglende betaling sendes fakturaen til inkasso. Lovbestemt forsinkelsesrente beregnes.</p>
       </section>
 
-      <section id="pamelding" style="margin-top:44px;padding-top:24px;border-top:1px solid #DCD7CA;scroll-margin-top:100px">
+      <section id="pamelding" style="margin-top:44px;padding-top:24px;border-top:1px solid #E6E3DD;scroll-margin-top:100px">
         <h3 style="font:600 clamp(22px,2vw,30px)/1.2 Archivo,sans-serif;letter-spacing:-.015em">Påmelding</h3>
         <p style="margin-top:18px;max-width:68ch;font:400 17px/1.68 'Source Serif 4',Georgia,serif;color:#2B3348">Påmelding bekreftes automatisk til oppgitt e-postadresse. Automatisk bekreftelse innebærer ikke at kursplass er endelig bekreftet.</p>
         <p style="margin-top:16px;max-width:68ch;font:400 17px/1.68 'Source Serif 4',Georgia,serif;color:#2B3348">Påmeldingen blir bindende når påmeldingsfristen har utløpt. Etter fristen sendes separat bekreftelse på plass eller beskjed om venteliste.</p>
       </section>
 
-      <section id="avlysning" style="margin-top:44px;padding-top:24px;border-top:1px solid #DCD7CA;scroll-margin-top:100px">
+      <section id="avlysning" style="margin-top:44px;padding-top:24px;border-top:1px solid #E6E3DD;scroll-margin-top:100px">
         <h3 style="font:600 clamp(22px,2vw,30px)/1.2 Archivo,sans-serif;letter-spacing:-.015em">Avlysning</h3>
         <p style="margin-top:18px;max-width:68ch;font:400 17px/1.68 'Source Serif 4',Georgia,serif;color:#2B3348">Vi tar forbehold om avlysning ved få påmeldte. Beskjed gis kort tid etter påmeldingsfristen og før endelig plassbekreftelse.</p>
         <p style="margin-top:16px;max-width:68ch;font:400 17px/1.68 'Source Serif 4',Georgia,serif;color:#2B3348">Leverandøren har ikke ansvar for kundens kostnader til reise og overnatting dersom avlysning skjer før plass er bekreftet.</p>
         <p style="margin-top:16px;max-width:68ch;font:400 17px/1.68 'Source Serif 4',Georgia,serif;color:#2B3348">Ved sykdom eller andre alvorlige hendelser som hindrer gjennomføring etter plassbekreftelse, dekker leverandøren nødvendige og dokumenterte reiseutgifter kunden påføres som følge av avlysningen. Kunden skal begrense tapet så langt som mulig. Ved force majeure er leverandøren fritatt for ansvar for ulemper og kostnader kunden påføres.</p>
       </section>
 
-      <section id="avmelding" style="margin-top:44px;padding-top:24px;border-top:1px solid #DCD7CA;scroll-margin-top:100px">
+      <section id="avmelding" style="margin-top:44px;padding-top:24px;border-top:1px solid #E6E3DD;scroll-margin-top:100px">
         <h3 style="font:600 clamp(22px,2vw,30px)/1.2 Archivo,sans-serif;letter-spacing:-.015em">Avmelding</h3>
         <p style="margin-top:18px;max-width:68ch;font:400 17px/1.68 'Source Serif 4',Georgia,serif;color:#2B3348">Avmelding er kostnadsfri frem til påmeldingsfristen. Etter fristen faktureres:</p>
         <dl style="margin-top:22px;max-width:640px">
-          <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:16px 0;border-top:1px solid #DCD7CA">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:16px 0;border-top:1px solid #E6E3DD">
             <dt style="flex:1 1 260px;font:400 16px/1.55 'Source Serif 4',Georgia,serif;color:#2B3348">Fra påmeldingsfristen til fem virkedager før kursstart</dt>
             <dd style="margin:0;font:500 19px/1 'IBM Plex Mono',monospace;color:#16213C">20 %</dd>
           </div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:16px 0;border-top:1px solid #DCD7CA">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:16px 0;border-top:1px solid #E6E3DD">
             <dt style="flex:1 1 260px;font:400 16px/1.55 'Source Serif 4',Georgia,serif;color:#2B3348">Fra fem til to virkedager før kursstart</dt>
             <dd style="margin:0;font:500 19px/1 'IBM Plex Mono',monospace;color:#16213C">50 %</dd>
           </div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:16px 0;border-top:1px solid #DCD7CA;border-bottom:1px solid #DCD7CA">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:16px 0;border-top:1px solid #E6E3DD;border-bottom:1px solid #E6E3DD">
             <dt style="flex:1 1 260px;font:400 16px/1.55 'Source Serif 4',Georgia,serif;color:#2B3348">De siste to virkedagene før kursstart, og ved manglende fremmøte</dt>
             <dd style="margin:0;font:500 19px/1 'IBM Plex Mono',monospace;color:#16213C">100 %</dd>
           </div>
@@ -623,12 +623,12 @@ ul,ol{padding:0;list-style:none}
         <p style="margin-top:18px;max-width:68ch;font:400 17px/1.68 'Source Serif 4',Georgia,serif;color:#2B3348">100 % gjelder også dersom vær, føre, stengte veier, kansellerte flyvninger eller sykdom hindrer fremmøte.</p>
       </section>
 
-      <section id="reise" style="margin-top:44px;padding-top:24px;border-top:1px solid #DCD7CA;scroll-margin-top:100px">
+      <section id="reise" style="margin-top:44px;padding-top:24px;border-top:1px solid #E6E3DD;scroll-margin-top:100px">
         <h3 style="font:600 clamp(22px,2vw,30px)/1.2 Archivo,sans-serif;letter-spacing:-.015em">Reise og overnatting</h3>
         <p style="margin-top:18px;max-width:68ch;font:400 17px/1.68 'Source Serif 4',Georgia,serif;color:#2B3348">Kunden er selv ansvarlig for reise og overnatting.</p>
       </section>
 
-      <section id="personvern" style="margin-top:44px;padding-top:24px;border-top:1px solid #DCD7CA;scroll-margin-top:100px">
+      <section id="personvern" style="margin-top:44px;padding-top:24px;border-top:1px solid #E6E3DD;scroll-margin-top:100px">
         <h3 style="font:600 clamp(22px,2vw,30px)/1.2 Archivo,sans-serif;letter-spacing:-.015em">Personvern</h3>
         <p style="margin-top:18px;max-width:68ch;font:400 17px/1.68 'Source Serif 4',Georgia,serif;color:#2B3348">Kursdeltakerne aksepterer ved påmelding at navn, e-postadresse og arbeidsgiver gjøres kjent for kursholderne og andre deltakere på samme kurs via deltakerlister og felles utsendelser før og etter kurset.</p>
         <p style="margin-top:16px;max-width:68ch;font:400 17px/1.68 'Source Serif 4',Georgia,serif;color:#2B3348">Informasjon fra påmeldingsskjema og om faktisk deltakelse lagres for blant annet fakturering, kursbevis og oversikt over tidligere kurs. Deltakere kan be om sletting.</p>
@@ -641,19 +641,19 @@ ul,ol{padding:0;list-style:none}
       <section id="honorar" style="margin-top:28px;padding-top:24px;border-top:1px solid #16213C;scroll-margin-top:100px">
         <h3 style="font:600 clamp(22px,2vw,30px)/1.2 Archivo,sans-serif;letter-spacing:-.015em">Honorar og deltakere</h3>
         <dl style="margin-top:20px;max-width:640px">
-          <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:16px 0;border-top:1px solid #DCD7CA">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:16px 0;border-top:1px solid #E6E3DD">
             <dt style="flex:1 1 260px;font:400 16px/1.55 'Source Serif 4',Georgia,serif">2-dagerskurs med to kursholdere</dt>
             <dd style="margin:0;font:500 17px/1 'IBM Plex Mono',monospace">106 000 kr</dd>
           </div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:16px 0;border-top:1px solid #DCD7CA">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:16px 0;border-top:1px solid #E6E3DD">
             <dt style="flex:1 1 260px;font:400 16px/1.55 'Source Serif 4',Georgia,serif">Dagskurs med to kursholdere</dt>
             <dd style="margin:0;font:500 17px/1 'IBM Plex Mono',monospace">53 000 kr</dd>
           </div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:16px 0;border-top:1px solid #DCD7CA">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:16px 0;border-top:1px solid #E6E3DD">
             <dt style="flex:1 1 260px;font:400 16px/1.55 'Source Serif 4',Georgia,serif">Forberedelse og etterarbeid</dt>
             <dd style="margin:0;font:500 17px/1 'IBM Plex Mono',monospace">2 000 kr / time</dd>
           </div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:16px 0;border-top:1px solid #DCD7CA;border-bottom:1px solid #DCD7CA">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:16px 0;border-top:1px solid #E6E3DD;border-bottom:1px solid #E6E3DD">
             <dt style="flex:1 1 260px;font:400 16px/1.55 'Source Serif 4',Georgia,serif">Fra deltaker 31</dt>
             <dd style="margin:0;font:500 17px/1 'IBM Plex Mono',monospace">500 kr / deltaker / kursdag</dd>
           </div>
@@ -661,44 +661,44 @@ ul,ol{padding:0;list-style:none}
         <p style="margin-top:18px;max-width:68ch;font:400 17px/1.68 'Source Serif 4',Georgia,serif;color:#2B3348">Kunden skal på forhånd få anslag over timer og kostnader for forberedelse og etterarbeid. Prisene gjelder inntil 30 deltakere.</p>
       </section>
 
-      <section id="praktisk" style="margin-top:44px;padding-top:24px;border-top:1px solid #DCD7CA;scroll-margin-top:100px">
+      <section id="praktisk" style="margin-top:44px;padding-top:24px;border-top:1px solid #E6E3DD;scroll-margin-top:100px">
         <h3 style="font:600 clamp(22px,2vw,30px)/1.2 Archivo,sans-serif;letter-spacing:-.015em">Reise, materiell, lokaler og tidsplan</h3>
         <dl style="margin-top:20px;max-width:700px">
-          <div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:18px 0;border-top:1px solid #DCD7CA">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:18px 0;border-top:1px solid #E6E3DD">
             <dt style="flex:0 0 180px;font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6A7186">Reise og opphold</dt>
             <dd style="flex:1 1 260px;margin:0;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#2B3348">Faktureres etter regning og/eller statens satser.</dd>
           </div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:18px 0;border-top:1px solid #DCD7CA">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:18px 0;border-top:1px solid #E6E3DD">
             <dt style="flex:0 0 180px;font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6A7186">Kursmateriell</dt>
             <dd style="flex:1 1 260px;margin:0;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#2B3348">Kunden kan selv kopiere kursmateriellet uten tillegg. Voldsavsnittet kan etter avtale sørge for trykking.</dd>
           </div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:18px 0;border-top:1px solid #DCD7CA">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:18px 0;border-top:1px solid #E6E3DD">
             <dt style="flex:0 0 180px;font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6A7186">Lokaler og servering</dt>
             <dd style="flex:1 1 260px;margin:0;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#2B3348">Kunden sørger for lokale, lunsj og kaffe/te.</dd>
           </div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:18px 0;border-top:1px solid #DCD7CA">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:18px 0;border-top:1px solid #E6E3DD">
             <dt style="flex:0 0 180px;font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6A7186">Tidsplan</dt>
             <dd style="flex:1 1 260px;margin:0;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#2B3348">Normal kursdag er 09.00–16.00 med én times lunsj og korte pauser.</dd>
           </div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:18px 0;border-top:1px solid #DCD7CA;border-bottom:1px solid #DCD7CA">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:18px 0;border-top:1px solid #E6E3DD;border-bottom:1px solid #E6E3DD">
             <dt style="flex:0 0 180px;font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6A7186">Reiseoppdrag</dt>
             <dd style="flex:1 1 260px;margin:0;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#2B3348">Oppdrag som innebærer reise gjennomføres som hele kursdager.</dd>
           </div>
         </dl>
       </section>
 
-      <section id="kommersiell" style="margin-top:44px;padding-top:24px;border-top:1px solid #DCD7CA;scroll-margin-top:100px">
+      <section id="kommersiell" style="margin-top:44px;padding-top:24px;border-top:1px solid #E6E3DD;scroll-margin-top:100px">
         <h3 style="font:600 clamp(22px,2vw,30px)/1.2 Archivo,sans-serif;letter-spacing:-.015em">Kommersiell utnyttelse</h3>
         <p style="margin-top:18px;max-width:68ch;font:400 17px/1.68 'Source Serif 4',Georgia,serif;color:#2B3348">Dersom kunden inviterer eksterne kursdeltakere til et lokalt fastpriskurs med sikte på fortjeneste, er dette i strid med inngåtte avtaler og opphavsrettslige begrensninger.</p>
       </section>
 
-      <section id="fakturering-lokalt" style="margin-top:44px;padding-top:24px;border-top:1px solid #DCD7CA;scroll-margin-top:100px">
+      <section id="fakturering-lokalt" style="margin-top:44px;padding-top:24px;border-top:1px solid #E6E3DD;scroll-margin-top:100px">
         <h3 style="font:600 clamp(22px,2vw,30px)/1.2 Archivo,sans-serif;letter-spacing:-.015em">Fakturering</h3>
         <p style="margin-top:18px;max-width:68ch;font:400 17px/1.68 'Source Serif 4',Georgia,serif;color:#2B3348">Faktura sendes til bestillers arbeidsgiver, vanligvis kommunen. EHF benyttes primært. Bestiller er ansvarlig for korrekt fakturareferanse.</p>
         <p style="margin-top:16px;max-width:68ch;font:400 17px/1.68 'Source Serif 4',Georgia,serif;color:#2B3348">Betalingsfrist er 14 dager. Lovbestemte regler om betalingspåminnelse, inkasso og forsinkelsesrente gjelder.</p>
       </section>
 
-      <section id="avlysning-lokalt" style="margin-top:44px;padding-top:24px;border-top:1px solid #DCD7CA;scroll-margin-top:100px">
+      <section id="avlysning-lokalt" style="margin-top:44px;padding-top:24px;border-top:1px solid #E6E3DD;scroll-margin-top:100px">
         <h3 style="font:600 clamp(22px,2vw,30px)/1.2 Archivo,sans-serif;letter-spacing:-.015em">Avlysning</h3>
         <p style="margin-top:18px;font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6A7186">Fra kunden</p>
         <p style="margin-top:12px;max-width:68ch;font:400 17px/1.68 'Source Serif 4',Georgia,serif;color:#2B3348">Ved avlysning betaler kunden leverandørens utlegg og medgått tid til forberedelser. Ved avlysning senere enn 14 dager før kursstart betales hele avtalt kurshonorar.</p>
@@ -710,18 +710,18 @@ ul,ol{padding:0;list-style:none}
     <nav aria-label="Innhold" style="flex:1 1 260px;min-width:0;max-width:320px;position:sticky;top:100px;padding:clamp(28px,3.5vw,48px) 0">
       <p style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#6A7186;padding-bottom:14px;border-bottom:1px solid #16213C">Innhold</p>
       <a href="#apne" style="display:block;font:600 13px/1 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:#16213C;text-decoration:none;padding:16px 0 10px" style-hover="color:#9C5C1C">Åpne kurs</a>
-      <a href="#fakturering" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #DCD7CA" style-hover="color:#9C5C1C">Fakturering</a>
-      <a href="#pamelding" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #DCD7CA" style-hover="color:#9C5C1C">Påmelding</a>
-      <a href="#avlysning" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #DCD7CA" style-hover="color:#9C5C1C">Avlysning</a>
-      <a href="#avmelding" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #DCD7CA" style-hover="color:#9C5C1C">Avmelding</a>
-      <a href="#reise" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #DCD7CA" style-hover="color:#9C5C1C">Reise og overnatting</a>
-      <a href="#personvern" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #DCD7CA" style-hover="color:#9C5C1C">Personvern</a>
+      <a href="#fakturering" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #E6E3DD" style-hover="color:#9C5C1C">Fakturering</a>
+      <a href="#pamelding" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #E6E3DD" style-hover="color:#9C5C1C">Påmelding</a>
+      <a href="#avlysning" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #E6E3DD" style-hover="color:#9C5C1C">Avlysning</a>
+      <a href="#avmelding" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #E6E3DD" style-hover="color:#9C5C1C">Avmelding</a>
+      <a href="#reise" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #E6E3DD" style-hover="color:#9C5C1C">Reise og overnatting</a>
+      <a href="#personvern" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #E6E3DD" style-hover="color:#9C5C1C">Personvern</a>
       <a href="#lokale" style="display:block;font:600 13px/1 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:#16213C;text-decoration:none;padding:22px 0 10px;border-top:1px solid #16213C;margin-top:10px" style-hover="color:#9C5C1C">Lokale kurs</a>
-      <a href="#honorar" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #DCD7CA" style-hover="color:#9C5C1C">Honorar og deltakere</a>
-      <a href="#praktisk" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #DCD7CA" style-hover="color:#9C5C1C">Reise, materiell, lokaler</a>
-      <a href="#kommersiell" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #DCD7CA" style-hover="color:#9C5C1C">Kommersiell utnyttelse</a>
-      <a href="#fakturering-lokalt" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #DCD7CA" style-hover="color:#9C5C1C">Fakturering</a>
-      <a href="#avlysning-lokalt" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #DCD7CA" style-hover="color:#9C5C1C">Avlysning</a>
+      <a href="#honorar" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #E6E3DD" style-hover="color:#9C5C1C">Honorar og deltakere</a>
+      <a href="#praktisk" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #E6E3DD" style-hover="color:#9C5C1C">Reise, materiell, lokaler</a>
+      <a href="#kommersiell" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #E6E3DD" style-hover="color:#9C5C1C">Kommersiell utnyttelse</a>
+      <a href="#fakturering-lokalt" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #E6E3DD" style-hover="color:#9C5C1C">Fakturering</a>
+      <a href="#avlysning-lokalt" style="display:block;font:400 15px/1.3 Archivo,sans-serif;color:#3C4459;text-decoration:none;padding:10px 0;border-top:1px solid #E6E3DD" style-hover="color:#9C5C1C">Avlysning</a>
     </nav>
   </div>
 </div>
@@ -737,20 +737,20 @@ ul,ol{padding:0;list-style:none}
       <p style="margin-top:28px;max-width:62ch;font:400 clamp(18px,1.4vw,22px)/1.58 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">{{ arkiv.intro }}</p>
     </div>
     <sc-if value="{{ erInnsikt }}">
-      <div style="flex:0 1 380px;min-width:0;position:relative;background:#F4F2EC">
+      <div style="flex:0 1 380px;min-width:0;position:relative;background:#FCFBF9">
         <img src="assets/skisse-innsikt.png" alt="Blyantskisse av hender som skriver på en bærbar PC ved et skrivebord" style="display:block;width:100%;height:clamp(220px,24vw,330px);object-fit:cover;object-position:50% 30%;opacity:.55;mix-blend-mode:multiply;filter:grayscale(1) sepia(.42) hue-rotate(178deg) saturate(1.35) contrast(1.05)">
-        <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(244,242,236,0) 45%,#F4F2EC 100%);pointer-events:none"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(244,242,236,0) 45%,#FCFBF9 100%);pointer-events:none"></div>
       </div>
     </sc-if>
     <sc-if value="{{ erRettspolitikk }}">
-      <div style="flex:0 1 380px;min-width:0;position:relative;background:#F4F2EC">
+      <div style="flex:0 1 380px;min-width:0;position:relative;background:#FCFBF9">
         <img src="assets/skisse-stortinget.png" alt="Blyantskisse av Stortingsbygningen med løvestatuen" style="display:block;width:100%;height:clamp(220px,24vw,330px);object-fit:cover;object-position:50% 18%;opacity:.55;mix-blend-mode:multiply;filter:grayscale(1) sepia(.42) hue-rotate(178deg) saturate(1.35) contrast(1.05)">
-        <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(244,242,236,0) 45%,#F4F2EC 100%);pointer-events:none"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(244,242,236,0) 45%,#FCFBF9 100%);pointer-events:none"></div>
       </div>
     </sc-if>
   </div>
   <sc-if value="{{ arkiv.seksjoner }}">
-  <section style="max-width:1320px;margin:0 auto;padding:clamp(44px,5.5vw,88px) clamp(20px,5vw,72px);border-bottom:1px solid #DCD7CA">
+  <section style="max-width:1320px;margin:0 auto;padding:clamp(44px,5.5vw,88px) clamp(20px,5vw,72px);border-bottom:1px solid #E6E3DD">
     <div style="display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,88px)">
       <p style="flex:0 0 auto;font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#9C5C1C">Slik arbeider vi</p>
       <div style="flex:1 1 520px;min-width:0;max-width:72ch;display:flex;flex-direction:column;gap:clamp(36px,3.6vw,56px)">
@@ -763,7 +763,7 @@ ul,ol{padding:0;list-style:none}
             <sc-if value="{{ sek.punkter }}">
               <ul style="margin-top:20px;display:grid;gap:0">
                 <sc-for list="{{ sek.punkter }}" as="pt" hint-placeholder-count="4">
-                  <li style="display:flex;gap:16px;padding:14px 0;border-top:1px solid #DCD7CA">
+                  <li style="display:flex;gap:16px;padding:14px 0;border-top:1px solid #E6E3DD">
                     <span aria-hidden="true" style="flex:0 0 auto;margin-top:9px;width:6px;height:6px;background:#9C5C1C"></span>
                     <p style="font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">{{ pt }}</p>
                   </li>
@@ -786,7 +786,7 @@ ul,ol{padding:0;list-style:none}
     <p style="margin-top:14px;max-width:60ch;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#6A7186">{{ g.note }}</p>
     <ul style="margin-top:28px">
       <sc-for list="{{ g.items }}" as="p" hint-placeholder-count="2">
-        <li style="display:flex;flex-wrap:wrap;gap:12px 40px;padding:30px 0;border-top:1px solid #DCD7CA">
+        <li style="display:flex;flex-wrap:wrap;gap:12px 40px;padding:30px 0;border-top:1px solid #E6E3DD">
           <p style="flex:0 0 96px;font:400 12px/1.4 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#9C5C1C">{{ p.aar }}</p>
           <div style="flex:1 1 420px;min-width:0;max-width:66ch;display:flex;flex-direction:column;gap:10px">
             <h3 style="font:500 clamp(20px,1.7vw,27px)/1.28 Archivo,sans-serif;letter-spacing:-.015em;color:#16213C;text-wrap:pretty">{{ p.tittel }}</h3>
@@ -802,8 +802,8 @@ ul,ol{padding:0;list-style:none}
     </div>
     </sc-for>
     <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:12px">
-      <a href="{{ epostLenke }}" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:18px 26px;border:1px solid #16213C;border-radius:2px" style-hover="background:#EAE6DC">Kontakt fagavdelingen</a>
-      <a href="#/kurs" style="font:600 15px/1 Archivo,sans-serif;color:#F4F2EC;background:#132444;text-decoration:none;padding:18px 26px;border-radius:2px" style-hover="background:#9C5C1C">Se kurs</a>
+      <a href="{{ epostLenke }}" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:18px 26px;border:1px solid #16213C;border-radius:2px" style-hover="background:#F2F0EC">Kontakt fagavdelingen</a>
+      <a href="#/kurs" style="font:600 15px/1 Archivo,sans-serif;color:#FCFBF9;background:#132444;text-decoration:none;padding:18px 26px;border-radius:2px" style-hover="background:#9C5C1C">Se kurs</a>
     </div>
   </section>
 </div>
@@ -820,38 +820,38 @@ ul,ol{padding:0;list-style:none}
     <p style="position:relative;margin-top:28px;max-width:64ch;font:400 clamp(18px,1.45vw,23px)/1.55 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Voldsavsnittet er en fagavdeling i <a href="https://www.omsorgsjuss.no/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#9C5C1C" style-hover="color:#9C5C1C">Omsorgsjuss</a> AS. Formålet er å bidra til å forebygge, avdekke og begrense konsekvensene av vold mot særlig utsatte personer og vold i nære relasjoner.</p>
     </div>
   </div>
-  <section aria-labelledby="grunnlag-t" style="max-width:1320px;margin:0 auto;padding:clamp(44px,5.5vw,88px) clamp(20px,5vw,72px);border-bottom:1px solid #DCD7CA;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,88px)">
+  <section aria-labelledby="grunnlag-t" style="max-width:1320px;margin:0 auto;padding:clamp(44px,5.5vw,88px) clamp(20px,5vw,72px);border-bottom:1px solid #E6E3DD;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,88px)">
     <div style="flex:0 0 auto;min-width:0">
       <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#9C5C1C">Slik arbeider vi</p>
       <h2 id="grunnlag-t" style="margin-top:20px;font:600 clamp(26px,2.6vw,38px)/1.12 Archivo,sans-serif;letter-spacing:-.025em;color:#16213C;max-width:14ch">Grunnlaget vårt</h2>
     </div>
     <div style="flex:1 1 520px;min-width:0;max-width:72ch">
       <ul style="display:grid;gap:0">
-        <li style="display:flex;gap:16px;padding:16px 0;border-top:1px solid #DCD7CA">
+        <li style="display:flex;gap:16px;padding:16px 0;border-top:1px solid #E6E3DD">
           <span aria-hidden="true" style="flex:0 0 auto;margin-top:10px;width:6px;height:6px;background:#9C5C1C"></span>
           <p style="font:400 clamp(17px,1.25vw,19px)/1.66 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">Våre erfaringskonsulenter bidrar med sine erfaringer om vold og møtet med hjelpeapparatet. Deres ønske og vilje til å dele er viktig for at vi og våre kunder skal forstå hva som fungerte, og hva som ikke fungerte da de trengte hjelp. Deres mot gir en unik innsikt i hvordan systemet virker for mennesker som utsettes for vold.</p>
         </li>
-        <li style="display:flex;gap:16px;padding:16px 0;border-top:1px solid #DCD7CA">
+        <li style="display:flex;gap:16px;padding:16px 0;border-top:1px solid #E6E3DD">
           <span aria-hidden="true" style="flex:0 0 auto;margin-top:10px;width:6px;height:6px;background:#9C5C1C"></span>
           <p style="font:400 clamp(17px,1.25vw,19px)/1.66 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">Teamet vårt består av ansatte fra ulike fagdisipliner, med forskjellig kompetanse og erfaring knyttet til voldsfeltet.</p>
         </li>
-        <li style="display:flex;gap:16px;padding:16px 0;border-top:1px solid #DCD7CA">
+        <li style="display:flex;gap:16px;padding:16px 0;border-top:1px solid #E6E3DD">
           <span aria-hidden="true" style="flex:0 0 auto;margin-top:10px;width:6px;height:6px;background:#9C5C1C"></span>
           <p style="font:400 clamp(17px,1.25vw,19px)/1.66 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">Daglig leder Marianne Skattum er jurist med om lag 30 års arbeid med forvaltningsrett, helse- og omsorgsrett og menneskerettigheter. Hun har lang erfaring med å levere kurs og fagstøtte til kommuner over hele landet, og har vært rådgiver i Sosial- og helsedepartementet/Helse- og omsorgsdepartementet — en erfaring som er svært nyttig i det rettspolitiske arbeidet vårt.</p>
         </li>
-        <li style="display:flex;gap:16px;padding:16px 0;border-top:1px solid #DCD7CA">
+        <li style="display:flex;gap:16px;padding:16px 0;border-top:1px solid #E6E3DD">
           <span aria-hidden="true" style="flex:0 0 auto;margin-top:10px;width:6px;height:6px;background:#9C5C1C"></span>
           <p style="font:400 clamp(17px,1.25vw,19px)/1.66 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">Vi har samarbeid og dialog med en rekke andre fageksperter på feltet.</p>
         </li>
-        <li style="display:flex;gap:16px;padding:16px 0;border-top:1px solid #DCD7CA">
+        <li style="display:flex;gap:16px;padding:16px 0;border-top:1px solid #E6E3DD">
           <span aria-hidden="true" style="flex:0 0 auto;margin-top:10px;width:6px;height:6px;background:#9C5C1C"></span>
           <p style="font:400 clamp(17px,1.25vw,19px)/1.66 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">Vi tar en aktiv rolle i samfunnsdebatten. Tydelig, uredd og ærlig på sak.</p>
         </li>
-        <li style="display:flex;gap:16px;padding:16px 0;border-top:1px solid #DCD7CA">
+        <li style="display:flex;gap:16px;padding:16px 0;border-top:1px solid #E6E3DD">
           <span aria-hidden="true" style="flex:0 0 auto;margin-top:10px;width:6px;height:6px;background:#9C5C1C"></span>
           <p style="font:400 clamp(17px,1.25vw,19px)/1.66 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">Vi utvikler egne rapporter og analyser, blant annet knyttet til Norges innsats på voldsfeltet.</p>
         </li>
-        <li style="display:flex;gap:16px;padding:16px 0;border-top:1px solid #DCD7CA;border-bottom:1px solid #DCD7CA">
+        <li style="display:flex;gap:16px;padding:16px 0;border-top:1px solid #E6E3DD;border-bottom:1px solid #E6E3DD">
           <span aria-hidden="true" style="flex:0 0 auto;margin-top:10px;width:6px;height:6px;background:#9C5C1C"></span>
           <p style="font:400 clamp(17px,1.25vw,19px)/1.66 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">Ved å lytte til våre erfaringskonsulenter og se deres fortellinger opp mot våre makroanalyser bringer vi med oss ny kunnskap på feltet. Vi jobber praksisnært og løsningsorientert. Vår ambisjon er å bidra til metoder og løsninger som forebygger, avdekker og avverger vold — slik at hjelpen når menneskene som trenger den.</p>
         </li>
@@ -860,21 +860,21 @@ ul,ol{padding:0;list-style:none}
   </section>
   <section aria-labelledby="leder-t" style="max-width:1320px;margin:0 auto;padding:clamp(44px,5.5vw,88px) clamp(20px,5vw,72px);display:flex;flex-wrap:wrap;gap:clamp(40px,5vw,88px)">
     <div style="flex:1 1 280px;min-width:0;max-width:360px">
-      <img src="assets/portrett-marianne.jpg" alt="Portrett av Marianne Skattum, daglig leder i Omsorgsjuss AS" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;border:1px solid #DCD7CA;background:#EAE6DC">
+      <img src="assets/portrett-marianne.jpg" alt="Portrett av Marianne Skattum, daglig leder i Omsorgsjuss AS" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;border:1px solid #E6E3DD;background:#F2F0EC">
       <dl style="margin-top:28px">
         <div style="padding:14px 0;border-top:1px solid #16213C">
           <dt style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6A7186">Rolle</dt>
           <dd style="margin:8px 0 0;font:500 16px/1.4 Archivo,sans-serif;color:#16213C">Daglig leder, <a href="https://www.omsorgsjuss.no/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#9C5C1C" style-hover="color:#9C5C1C">Omsorgsjuss</a> AS</dd>
         </div>
-        <div style="padding:14px 0;border-top:1px solid #DCD7CA">
+        <div style="padding:14px 0;border-top:1px solid #E6E3DD">
           <dt style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6A7186">Profesjon</dt>
           <dd style="margin:8px 0 0;font:500 16px/1.4 Archivo,sans-serif;color:#16213C">Jurist</dd>
         </div>
-        <div style="padding:14px 0;border-top:1px solid #DCD7CA">
+        <div style="padding:14px 0;border-top:1px solid #E6E3DD">
           <dt style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6A7186">Spesialområder</dt>
           <dd style="margin:8px 0 0;font:400 16px/1.55 'Source Serif 4',Georgia,serif;color:#2B3348">Forvaltningsrett, helse- og omsorgsrett, menneskerettigheter</dd>
         </div>
-        <div style="padding:14px 0;border-top:1px solid #DCD7CA;border-bottom:1px solid #DCD7CA">
+        <div style="padding:14px 0;border-top:1px solid #E6E3DD;border-bottom:1px solid #E6E3DD">
           <dt style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6A7186">Daglig leder siden</dt>
           <dd style="margin:8px 0 0;font:500 16px/1.4 'IBM Plex Mono',monospace;color:#16213C">2014</dd>
         </div>
@@ -899,7 +899,213 @@ ul,ol{padding:0;list-style:none}
       </div>
     </div>
   </section>
-  <section aria-labelledby="opptrer-t" style="border-top:1px solid #DCD7CA;max-width:1320px;margin:0 auto;padding:clamp(44px,5.5vw,88px) clamp(20px,5vw,72px);display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,88px)">
+  <section aria-labelledby="medarb-t" style="border-top:1px solid #E6E3DD;background:#F7F5F1">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(44px,5.5vw,88px) clamp(20px,5vw,72px)">
+      <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end;justify-content:space-between">
+        <div>
+          <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#9C5C1C">Teamet</p>
+          <h2 id="medarb-t" style="margin-top:20px;font:600 clamp(28px,3.2vw,46px)/1.06 Archivo,sans-serif;letter-spacing:-.025em;color:#16213C">Medarbeidere</h2>
+        </div>
+        <p style="max-width:46ch;font:400 17px/1.62 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Jurister, fagpersoner og erfaringskonsulenter. Sammen kombinerer vi levd erfaring med fag, forskning og forvaltningskunnskap.</p>
+      </div>
+      <div style="margin-top:clamp(28px,3.5vw,52px);display:grid;gap:0">
+
+        <article style="display:flex;flex-wrap:wrap;gap:clamp(24px,3.5vw,56px);padding:clamp(32px,4vw,56px) 0;border-top:1px solid #16213C">
+          <div style="flex:0 1 240px;min-width:180px">
+            <div role="img" aria-label="Portrett av Gunborg B. Isaksen" style="width:100%;aspect-ratio:4/5;border:1px solid #E6E3DD;background-image:repeating-linear-gradient(135deg,#E9E5DE 0 6px,#F2F0EC 6px 12px);display:flex;align-items:flex-end;padding:12px">
+              <span style="font:400 10px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#6A7186;background:#FCFBF9;padding:4px 6px">portrett — Gunborg</span>
+            </div>
+            <p style="margin-top:16px;font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#9C5C1C">Avdelingsleder, kursholder</p>
+          </div>
+          <div style="flex:1 1 460px;min-width:0;max-width:76ch">
+            <h3 style="font:600 clamp(24px,2.3vw,32px)/1.1 Archivo,sans-serif;letter-spacing:-.02em;color:#16213C">Gunborg B. Isaksen</h3>
+            <p style="margin-top:18px;font:400 clamp(17px,1.25vw,19px)/1.68 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">Gunborg B. Isaksen er avdelingsleder for Voldsavsnittet i <a href="https://www.omsorgsjuss.no/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#9C5C1C" style-hover="color:#9C5C1C">Omsorgsjuss</a> AS. Hun er også ansatt som fungerende fylkesaksjonsleder i Oslo i NRK TV-aksjonen. Hun har en allsidig bakgrunn, med 30 års erfaring fra showbiz, og mangeårig erfaring fra bedriftsledelse og management samt sceneproduksjoner og turnéer både i inn- og utland. Salg, promotering og prosjekter er i hennes DNA.</p>
+            <blockquote style="margin:24px 0 0;padding-left:20px;border-left:2px solid #9C5C1C;font:500 clamp(18px,1.5vw,22px)/1.45 Archivo,sans-serif;letter-spacing:-.01em;color:#16213C;text-wrap:pretty">«Med 30 års erfaring fra showbiz og ledelse bringer jeg struktur, engasjement og handlekraft til kampen for menneskerettigheter.»</blockquote>
+            <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px clamp(24px,3vw,48px)">
+              <div>
+                <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6A7186">Bakgrunn</p>
+                <p style="margin-top:12px;font:400 16px/1.66 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">De siste tre årene har Gunborg vært en del av fylkesteamet i Oslo for NRK TV-aksjonen. Hun er en rutinert «show-horse» med stort samfunnsengasjement, og et bankende hjerte for menneskerettigheter.</p>
+              </div>
+              <div>
+                <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6A7186">Arbeid i dag</p>
+                <p style="margin-top:12px;font:400 16px/1.66 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Som avdelingsleder kommer Gunborg inn med solid tyngde på ledelse, strategi og formidling. Hun jobber aktivt for å synliggjøre og bekjempe vold i nære relasjoner.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article style="display:flex;flex-wrap:wrap;gap:clamp(24px,3.5vw,56px);padding:clamp(32px,4vw,56px) 0;border-top:1px solid #E6E3DD">
+          <div style="flex:0 1 240px;min-width:180px">
+            <div role="img" aria-label="Portrett av Janniche S. Bergfjord" style="width:100%;aspect-ratio:4/5;border:1px solid #E6E3DD;background-image:repeating-linear-gradient(135deg,#E9E5DE 0 6px,#F2F0EC 6px 12px);display:flex;align-items:flex-end;padding:12px">
+              <span style="font:400 10px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#6A7186;background:#FCFBF9;padding:4px 6px">portrett — Janniche</span>
+            </div>
+            <p style="margin-top:16px;font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#9C5C1C">Erfaringskonsulent</p>
+          </div>
+          <div style="flex:1 1 460px;min-width:0;max-width:76ch">
+            <h3 style="font:600 clamp(24px,2.3vw,32px)/1.1 Archivo,sans-serif;letter-spacing:-.02em;color:#16213C">Janniche S. Bergfjord</h3>
+            <p style="margin-top:18px;font:400 clamp(17px,1.25vw,19px)/1.68 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">Janniche S. Bergfjord er erfaringskonsulent innen vold i nære relasjoner, med særlig kompetanse på psykisk, fysisk og seksuell vold. Hun holder kurs og foredrag basert på omfattende erfaring og dyp innsikt i hvordan vold påvirker individ, relasjoner og livsløp.</p>
+            <blockquote style="margin:24px 0 0;padding-left:20px;border-left:2px solid #9C5C1C;font:500 clamp(18px,1.5vw,22px)/1.45 Archivo,sans-serif;letter-spacing:-.01em;color:#16213C;text-wrap:pretty">«Erfaringsbasert kompetanse bidrar til økt kunnskap, bedre forebygging og mer treffsikre tiltak i møte med voldsutsatte.»</blockquote>
+            <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px clamp(24px,3vw,48px)">
+              <div>
+                <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6A7186">Bakgrunn</p>
+                <p style="margin-top:12px;font:400 16px/1.66 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Hun er aktivt engasjert i forskningsprosjekter innen voldsfeltet, blant annet gjennom NORCE, der hennes erfaringsbaserte kompetanse bidrar til økt kunnskap og mer treffsikre tiltak.</p>
+              </div>
+              <div>
+                <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6A7186">Arbeid i dag</p>
+                <p style="margin-top:12px;font:400 16px/1.66 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Sammen med Ann Christin Nøss holder Janniche foredraget «Når frykten blir styrke — fra krise til kunnskap», presentert blant annet på fagdag for krisesentrene. Foredraget kombinerer levd erfaring med refleksjon rundt systemmøter, makt og ansvar.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article style="display:flex;flex-wrap:wrap;gap:clamp(24px,3.5vw,56px);padding:clamp(32px,4vw,56px) 0;border-top:1px solid #E6E3DD">
+          <div style="flex:0 1 240px;min-width:180px">
+            <div role="img" aria-label="Portrett av Ann Christin Nøss" style="width:100%;aspect-ratio:4/5;border:1px solid #E6E3DD;background-image:repeating-linear-gradient(135deg,#E9E5DE 0 6px,#F2F0EC 6px 12px);display:flex;align-items:flex-end;padding:12px">
+              <span style="font:400 10px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#6A7186;background:#FCFBF9;padding:4px 6px">portrett — Ann Christin</span>
+            </div>
+            <p style="margin-top:16px;font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#9C5C1C">Erfaringskonsulent</p>
+          </div>
+          <div style="flex:1 1 460px;min-width:0;max-width:76ch">
+            <h3 style="font:600 clamp(24px,2.3vw,32px)/1.1 Archivo,sans-serif;letter-spacing:-.02em;color:#16213C">Ann Christin Nøss</h3>
+            <p style="margin-top:18px;font:400 clamp(17px,1.25vw,19px)/1.68 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">Ann Christin er erfaringskonsulent med særlig kompetanse på vold i nære relasjoner. Hun kombinerer levd erfaring med et tydelig faglig og systemkritisk blikk på makt, frykt, systemsvikt og behovet for tverrfaglig samarbeid. Hun har kompleks PTSD, lever med voldsalarm — og har overlevd så langt. Erfaringen tar hun med seg inn i arbeidet, ikke som en historie som er «over», men som levd kunnskap.</p>
+            <blockquote style="margin:24px 0 0;padding-left:20px;border-left:2px solid #9C5C1C;font:500 clamp(18px,1.5vw,22px)/1.45 Archivo,sans-serif;letter-spacing:-.01em;color:#16213C;text-wrap:pretty">«Levd kunnskap om hva vold i nære relasjoner faktisk gjør med mennesker, familier og møte med system.»</blockquote>
+            <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px clamp(24px,3vw,48px)">
+              <div>
+                <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6A7186">Bakgrunn</p>
+                <p style="margin-top:12px;font:400 16px/1.66 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Hun holder kurs og foredrag om alle former for vold, og formidler hvordan manglende samhandling i hjelpeapparatet forsterker belastningen for voldsutsatte. Hun har holdt appeller og foredrag for politikere, kommuner, NAV, helse- og omsorgstjenester og studenter, og sendt erfaringsbaserte innspill til lovforslag og høringer. Hun er også engasjert i forskningsprosjekter, blant annet gjennom NORCE.</p>
+              </div>
+              <div>
+                <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6A7186">Arbeid i dag</p>
+                <p style="margin-top:12px;font:400 16px/1.66 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Sammen med Janniche S. Bergfjord holder Ann Christin foredraget «Når frykten blir styrke — fra krise til kunnskap», rettet mot fagfolk, ledere og beslutningstakere på alle nivå.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article style="display:flex;flex-wrap:wrap;gap:clamp(24px,3.5vw,56px);padding:clamp(32px,4vw,56px) 0;border-top:1px solid #E6E3DD">
+          <div style="flex:0 1 240px;min-width:180px">
+            <div role="img" aria-label="Portrett av Therese Louice Leinan" style="width:100%;aspect-ratio:4/5;border:1px solid #E6E3DD;background-image:repeating-linear-gradient(135deg,#E9E5DE 0 6px,#F2F0EC 6px 12px);display:flex;align-items:flex-end;padding:12px">
+              <span style="font:400 10px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#6A7186;background:#FCFBF9;padding:4px 6px">portrett — Therese</span>
+            </div>
+            <p style="margin-top:16px;font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#9C5C1C">Kursholder, miljøterapeut</p>
+          </div>
+          <div style="flex:1 1 460px;min-width:0;max-width:76ch">
+            <h3 style="font:600 clamp(24px,2.3vw,32px)/1.1 Archivo,sans-serif;letter-spacing:-.02em;color:#16213C">Therese Louice Leinan</h3>
+            <p style="margin-top:18px;font:400 clamp(17px,1.25vw,19px)/1.68 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">Therese Louice Leinan er miljøterapeut innen psykiatri og kursholder med et sterkt engasjement for vold i nære relasjoner og traumeforståelse. Hun formidler med stort nærvær og tydelighet.</p>
+            <blockquote style="margin:24px 0 0;padding-left:20px;border-left:2px solid #9C5C1C;font:500 clamp(18px,1.5vw,22px)/1.45 Archivo,sans-serif;letter-spacing:-.01em;color:#16213C;text-wrap:pretty">«Å sette ord på det som ofte er vanskelig å snakke om — på en måte som oppleves både menneskelig og relevant.»</blockquote>
+            <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px clamp(24px,3vw,48px)">
+              <div>
+                <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6A7186">Bakgrunn</p>
+                <p style="margin-top:12px;font:400 16px/1.66 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Therese har personlig erfaring med vold i nære relasjoner, og erfaring med å stå i en rettsprosess der forholdet endte med dom. Det gir ekstra dybde i formidlingen — både i forståelsen av det usynlige, og hva som faktisk kan hjelpe videre.</p>
+              </div>
+              <div>
+                <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6A7186">Arbeid i dag</p>
+                <p style="margin-top:12px;font:400 16px/1.66 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Kursene hennes passer for fagmiljøer, organisasjoner og virksomheter som ønsker mer kunnskap, tryggere møte med voldsutsatte, og et språk som skaper forståelse.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article style="display:flex;flex-wrap:wrap;gap:clamp(24px,3.5vw,56px);padding:clamp(32px,4vw,56px) 0;border-top:1px solid #E6E3DD">
+          <div style="flex:0 1 240px;min-width:180px">
+            <div role="img" aria-label="Portrett av Sarah Cappelen" style="width:100%;aspect-ratio:4/5;border:1px solid #E6E3DD;background-image:repeating-linear-gradient(135deg,#E9E5DE 0 6px,#F2F0EC 6px 12px);display:flex;align-items:flex-end;padding:12px">
+              <span style="font:400 10px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#6A7186;background:#FCFBF9;padding:4px 6px">portrett — Sarah</span>
+            </div>
+            <p style="margin-top:16px;font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#9C5C1C">Kursholder, jurist</p>
+          </div>
+          <div style="flex:1 1 460px;min-width:0;max-width:76ch">
+            <h3 style="font:600 clamp(24px,2.3vw,32px)/1.1 Archivo,sans-serif;letter-spacing:-.02em;color:#16213C">Sarah Cappelen</h3>
+            <p style="margin-top:18px;font:400 clamp(17px,1.25vw,19px)/1.68 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">Sarah er utdannet jurist og har erfaring fra Justisdepartementet, der hun blant annet arbeidet i Sivilavdelingens rettshjelpteam, internasjonalt team og erstatningsteam. I internasjonalt team arbeidet hun med departementets rolle som sentral myndighet i barnebortføringssaker, og i erstatningsteamet med Stortingets billighetserstatningsordning og statens erstatningsansvar. Hun har også arbeidet i Kriminalomsorgsavdelingen.</p>
+            <blockquote style="margin:24px 0 0;padding-left:20px;border-left:2px solid #9C5C1C;font:500 clamp(18px,1.5vw,22px)/1.45 Archivo,sans-serif;letter-spacing:-.01em;color:#16213C;text-wrap:pretty">«Modernisering av regelverket i tråd med menneskerettighetene og internasjonalt regelverk er avgjørende for å styrke vern av utsatte.»</blockquote>
+            <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px clamp(24px,3vw,48px)">
+              <div>
+                <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6A7186">Bakgrunn</p>
+                <p style="margin-top:12px;font:400 16px/1.66 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Sarah har i mange år arbeidet i Norsk pasientskadeerstatning med personskadeoppgjør, sakkyndige vurderinger innen medisin og samarbeid med advokater. Hun har solid kompetanse innen forvaltningsrett fra Justisdepartementet.</p>
+              </div>
+              <div>
+                <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6A7186">Arbeid i dag</p>
+                <p style="margin-top:12px;font:400 16px/1.66 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Ved siden av kurs arbeider Sarah først og fremst med forslag til lovendringer som moderniserer norsk regelverk i tråd med menneskerettighetene. Hun er en pådriver for at regelverket om blant annet avvergeplikt og samhandling mellom etatene blir bedre kjent og fulgt i praksis.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article style="display:flex;flex-wrap:wrap;gap:clamp(24px,3.5vw,56px);padding:clamp(32px,4vw,56px) 0;border-top:1px solid #E6E3DD">
+          <div style="flex:0 1 240px;min-width:180px">
+            <div role="img" aria-label="Portrett av Silje Mikalsen" style="width:100%;aspect-ratio:4/5;border:1px solid #E6E3DD;background-image:repeating-linear-gradient(135deg,#E9E5DE 0 6px,#F2F0EC 6px 12px);display:flex;align-items:flex-end;padding:12px">
+              <span style="font:400 10px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#6A7186;background:#FCFBF9;padding:4px 6px">portrett — Silje</span>
+            </div>
+            <p style="margin-top:16px;font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#9C5C1C">Kursholder, organisasjonsutvikler</p>
+          </div>
+          <div style="flex:1 1 460px;min-width:0;max-width:76ch">
+            <h3 style="font:600 clamp(24px,2.3vw,32px)/1.1 Archivo,sans-serif;letter-spacing:-.02em;color:#16213C">Silje Mikalsen</h3>
+            <p style="margin-top:18px;font:400 clamp(17px,1.25vw,19px)/1.68 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">Silje Mikalsen har bakgrunn fra organisasjons- og lederutvikling, og har de siste årene spesialisert seg på vold i nære relasjoner, med særlig vekt på psykisk vold og tvangskontroll. Hun har gjennomført kvalitative intervjuer med over 30 personer med erfaring fra vold i nære relasjoner, samt et tyvetalls fagpersoner fra politi, krisesenter, helse- og omsorgstjenester, familievern og andre deler av hjelpeapparatet.</p>
+            <blockquote style="margin:24px 0 0;padding-left:20px;border-left:2px solid #9C5C1C;font:500 clamp(18px,1.5vw,22px)/1.45 Archivo,sans-serif;letter-spacing:-.01em;color:#16213C;text-wrap:pretty">«Å gjøre kompleks kunnskap om vold forståelig, relevant og anvendelig er nøkkelen til at ansatte tør å se, forstå og handle.»</blockquote>
+            <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px clamp(24px,3vw,48px)">
+              <div>
+                <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6A7186">Bakgrunn</p>
+                <p style="margin-top:12px;font:400 16px/1.66 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">16 års erfaring med strategi-, kultur- og endringsarbeid. Utdannet innen HR og personalledelse med grunnfag i psykologi, og har holdt faglige innlegg for blant annet Kripos, krisesenteret i Salten og Oslo-politiet.</p>
+              </div>
+              <div>
+                <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6A7186">Arbeid i dag</p>
+                <p style="margin-top:12px;font:400 16px/1.66 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">I Voldsavsnittet arbeider Silje med organisasjons- og konseptutvikling, kursutvikling og undervisning, med særlig fokus på samspillet mellom kunnskap, praksis og handling i tjenestene.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article style="display:flex;flex-wrap:wrap;gap:clamp(24px,3.5vw,56px);padding:clamp(32px,4vw,56px) 0;border-top:1px solid #E6E3DD">
+          <div style="flex:0 1 240px;min-width:180px">
+            <div role="img" aria-label="Portrett av Nina" style="width:100%;aspect-ratio:4/5;border:1px solid #E6E3DD;background-image:repeating-linear-gradient(135deg,#E9E5DE 0 6px,#F2F0EC 6px 12px);display:flex;align-items:flex-end;padding:12px">
+              <span style="font:400 10px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#6A7186;background:#FCFBF9;padding:4px 6px">portrett — Nina</span>
+            </div>
+            <p style="margin-top:16px;font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#9C5C1C">Erfaringskonsulent</p>
+          </div>
+          <div style="flex:1 1 460px;min-width:0;max-width:76ch">
+            <h3 style="font:600 clamp(24px,2.3vw,32px)/1.1 Archivo,sans-serif;letter-spacing:-.02em;color:#16213C">Nina</h3>
+            <p style="margin-top:18px;font:400 clamp(17px,1.25vw,19px)/1.68 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">Nina er kursholder på grunnkurset om avvergingsplikt, meldeplikt og praktisk håndtering av voldssaker for kommuner og andre førstelinjetjenester. Hun har valgt å bruke sine erfaringer til å styrke kompetansen i hjelpeapparatet.</p>
+            <blockquote style="margin:24px 0 0;padding-left:20px;border-left:2px solid #9C5C1C;font:500 clamp(18px,1.5vw,22px)/1.45 Archivo,sans-serif;letter-spacing:-.01em;color:#16213C;text-wrap:pretty">«Å bruke egne erfaringer til å styrke kompetansen i hjelpeapparatet gir mening til det vanskelige jeg har vært gjennom.»</blockquote>
+            <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px clamp(24px,3vw,48px)">
+              <div>
+                <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6A7186">Bakgrunn</p>
+                <p style="margin-top:12px;font:400 16px/1.66 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Nina har personlig erfaring med vold i nære relasjoner, og med å stå i en rettsprosess med voldsutøveren i ettertid. Erfaringskompetansen gir en unik innsikt i hvordan hjelpeapparatet kan møte voldsutsatte bedre.</p>
+              </div>
+              <div>
+                <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6A7186">Arbeid i dag</p>
+                <p style="margin-top:12px;font:400 16px/1.66 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Nina arbeider med økonomi og administrasjon i det offentlige. Ved siden av dette bidrar hun som kursholder for Voldsavsnittet.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article style="display:flex;flex-wrap:wrap;gap:clamp(24px,3.5vw,56px);padding:clamp(32px,4vw,56px) 0;border-top:1px solid #E6E3DD;border-bottom:1px solid #16213C">
+          <div style="flex:0 1 240px;min-width:180px">
+            <div role="img" aria-label="Portrett av Caroline" style="width:100%;aspect-ratio:4/5;border:1px solid #E6E3DD;background-image:repeating-linear-gradient(135deg,#E9E5DE 0 6px,#F2F0EC 6px 12px);display:flex;align-items:flex-end;padding:12px">
+              <span style="font:400 10px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#6A7186;background:#FCFBF9;padding:4px 6px">portrett — Caroline</span>
+            </div>
+            <p style="margin-top:16px;font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#9C5C1C">Erfaringskonsulent</p>
+          </div>
+          <div style="flex:1 1 460px;min-width:0;max-width:76ch">
+            <h3 style="font:600 clamp(24px,2.3vw,32px)/1.1 Archivo,sans-serif;letter-spacing:-.02em;color:#16213C">Caroline</h3>
+            <p style="margin-top:18px;font:400 clamp(17px,1.25vw,19px)/1.68 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">Caroline har en sterk livshistorie om overlevelse og håp. Hun har særlig fokus på barnets beste etter livskriser, barnevern og ettervern, og antimobbe-problematikk i skolen.</p>
+            <blockquote style="margin:24px 0 0;padding-left:20px;border-left:2px solid #9C5C1C;font:500 clamp(18px,1.5vw,22px)/1.45 Archivo,sans-serif;letter-spacing:-.01em;color:#16213C;text-wrap:pretty">«Min historie handler om overlevelse og håp — og om hvordan vi kan beskytte barna våre bedre.»</blockquote>
+            <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px clamp(24px,3vw,48px)">
+              <div>
+                <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6A7186">Bakgrunn</p>
+                <p style="margin-top:12px;font:400 16px/1.66 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Caroline har personlig erfaring med å overkomme store livskriser, og bruker denne erfaringen til å hjelpe andre. Hun har særlig innsikt i hvordan barn påvirkes av kriser, og hvordan systemene rundt kan støtte dem bedre.</p>
+              </div>
+              <div>
+                <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6A7186">Arbeid i dag</p>
+                <p style="margin-top:12px;font:400 16px/1.66 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Caroline bidrar som erfaringskonsulent med fokus på barnets beste, barnevern og ettervern, og forebygging av mobbing i skolen.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+  <section aria-labelledby="opptrer-t" style="border-top:1px solid #E6E3DD;max-width:1320px;margin:0 auto;padding:clamp(44px,5.5vw,88px) clamp(20px,5vw,72px);display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,88px)">
     <div style="flex:0 0 auto;min-width:0">
       <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#9C5C1C">Rollen vår</p>
       <h2 id="opptrer-t" style="margin-top:20px;font:600 clamp(26px,2.6vw,38px)/1.12 Archivo,sans-serif;letter-spacing:-.025em;color:#16213C;max-width:14ch">Hvordan vi jobber</h2>
@@ -910,41 +1116,81 @@ ul,ol{padding:0;list-style:none}
       <p style="margin-top:32px;padding-top:24px;border-top:1px solid #16213C;font:600 clamp(20px,1.9vw,27px)/1.4 Archivo,sans-serif;letter-spacing:-.015em;color:#16213C;text-wrap:pretty">Bedre beslutninger. Bedre systemer. Bedre muligheter til å forebygge, avdekke og avverge vold.</p>
     </div>
   </section>
-  <section aria-labelledby="verdier-t" style="background:#132444;color:#F4F2EC">
+  <section aria-labelledby="verdier-t" style="background:#132444;color:#FCFBF9">
     <div style="max-width:1320px;margin:0 auto;padding:clamp(48px,6vw,88px) clamp(20px,5vw,72px)">
       <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end;justify-content:space-between">
-        <h2 id="verdier-t" style="font:600 clamp(28px,3.2vw,46px)/1.06 Archivo,sans-serif;letter-spacing:-.025em;color:#F4F2EC;max-width:20ch">Våre verdier</h2>
+        <h2 id="verdier-t" style="font:600 clamp(28px,3.2vw,46px)/1.06 Archivo,sans-serif;letter-spacing:-.025em;color:#FCFBF9;max-width:20ch">Våre verdier</h2>
         <p style="font:400 17px/1.62 'Source Serif 4',Georgia,serif;color:#C9C4B6;max-width:42ch">Verdiene styrer hvordan vi arbeider — i kurs, i analyser og i møte med tjenestene.</p>
       </div>
       <ul style="margin-top:clamp(36px,4.5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0 clamp(28px,4vw,64px)">
         <li style="display:flex;gap:20px;align-items:baseline;padding:24px 0;border-top:1px solid rgba(244,242,236,.24)">
           <span style="font:400 11px/1.6 'IBM Plex Mono',monospace;color:#E0A868;letter-spacing:.1em">01</span>
-          <span style="font:500 clamp(21px,1.7vw,26px)/1.2 Archivo,sans-serif;color:#F4F2EC">Praksisnær</span>
+          <span style="font:500 clamp(21px,1.7vw,26px)/1.2 Archivo,sans-serif;color:#FCFBF9">Praksisnær</span>
         </li>
         <li style="display:flex;gap:20px;align-items:baseline;padding:24px 0;border-top:1px solid rgba(244,242,236,.24)">
           <span style="font:400 11px/1.6 'IBM Plex Mono',monospace;color:#E0A868;letter-spacing:.1em">02</span>
-          <span style="font:500 clamp(21px,1.7vw,26px)/1.2 Archivo,sans-serif;color:#F4F2EC">Løsningsorientert</span>
+          <span style="font:500 clamp(21px,1.7vw,26px)/1.2 Archivo,sans-serif;color:#FCFBF9">Løsningsorientert</span>
         </li>
         <li style="display:flex;gap:20px;align-items:baseline;padding:24px 0;border-top:1px solid rgba(244,242,236,.24)">
           <span style="font:400 11px/1.6 'IBM Plex Mono',monospace;color:#E0A868;letter-spacing:.1em">03</span>
-          <span style="font:500 clamp(21px,1.7vw,26px)/1.2 Archivo,sans-serif;color:#F4F2EC">Kunnskapsbasert</span>
+          <span style="font:500 clamp(21px,1.7vw,26px)/1.2 Archivo,sans-serif;color:#FCFBF9">Kunnskapsbasert</span>
         </li>
         <li style="display:flex;gap:20px;align-items:baseline;padding:24px 0;border-top:1px solid rgba(244,242,236,.24)">
           <span style="font:400 11px/1.6 'IBM Plex Mono',monospace;color:#E0A868;letter-spacing:.1em">04</span>
-          <span style="font:500 clamp(21px,1.7vw,26px)/1.2 Archivo,sans-serif;color:#F4F2EC">Tydelig</span>
+          <span style="font:500 clamp(21px,1.7vw,26px)/1.2 Archivo,sans-serif;color:#FCFBF9">Tydelig</span>
         </li>
         <li style="display:flex;gap:20px;align-items:baseline;padding:24px 0;border-top:1px solid rgba(244,242,236,.24)">
           <span style="font:400 11px/1.6 'IBM Plex Mono',monospace;color:#E0A868;letter-spacing:.1em">05</span>
-          <span style="font:500 clamp(21px,1.7vw,26px)/1.2 Archivo,sans-serif;color:#F4F2EC">Uredd</span>
+          <span style="font:500 clamp(21px,1.7vw,26px)/1.2 Archivo,sans-serif;color:#FCFBF9">Uredd</span>
         </li>
         <li style="display:flex;gap:20px;align-items:baseline;padding:24px 0;border-top:1px solid rgba(244,242,236,.24)">
           <span style="font:400 11px/1.6 'IBM Plex Mono',monospace;color:#E0A868;letter-spacing:.1em">06</span>
-          <span style="font:500 clamp(21px,1.7vw,26px)/1.2 Archivo,sans-serif;color:#F4F2EC">Ærlig på sak</span>
+          <span style="font:500 clamp(21px,1.7vw,26px)/1.2 Archivo,sans-serif;color:#FCFBF9">Ærlig på sak</span>
         </li>
       </ul>
     </div>
   </section>
-  <section style="background:#EAE6DC;border-top:1px solid #DCD7CA">
+  <section aria-labelledby="pss-t" style="max-width:1320px;margin:0 auto;padding:clamp(44px,5.5vw,88px) clamp(20px,5vw,72px);display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,88px)">
+    <div style="flex:0 0 auto;min-width:0">
+      <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#9C5C1C">Sikkerhetspartner</p>
+      <h2 id="pss-t" style="margin:0"><img src="assets/logo-pss-securitas.jpg" alt="PSS Securitas" style="display:block;margin-top:24px;width:clamp(140px,16vw,190px);height:auto"></h2>
+    </div>
+    <div style="flex:1 1 520px;min-width:0;max-width:72ch">
+      <p style="font:400 clamp(17px,1.25vw,19px)/1.68 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty"><a href="https://www.omsorgsjuss.no/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#9C5C1C" style-hover="color:#9C5C1C">Omsorgsjuss</a> AS og vår avdeling Voldsavsnittet har inngått samarbeidsavtale med PSS Securitas for leveranse av sikkerhetstjenester. Selskapet bistår våre medarbeidere med skreddersydde sikkerhetsløsninger, uansett omfang, behov og hvor i landet det gjelder.</p>
+      <p style="margin-top:32px;font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6A7186">Tjenester</p>
+      <ul style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0 clamp(24px,3vw,48px)">
+        <li style="display:flex;gap:14px;padding:14px 0;border-top:1px solid #E6E3DD">
+          <span aria-hidden="true" style="flex:0 0 auto;margin-top:9px;width:6px;height:6px;background:#9C5C1C"></span>
+          <p style="font:400 17px/1.55 'Source Serif 4',Georgia,serif;color:#2B3348">Ledsagertjeneste og personbeskyttelse</p>
+        </li>
+        <li style="display:flex;gap:14px;padding:14px 0;border-top:1px solid #E6E3DD">
+          <span aria-hidden="true" style="flex:0 0 auto;margin-top:9px;width:6px;height:6px;background:#9C5C1C"></span>
+          <p style="font:400 17px/1.55 'Source Serif 4',Georgia,serif;color:#2B3348">Sjåførtjeneste</p>
+        </li>
+        <li style="display:flex;gap:14px;padding:14px 0;border-top:1px solid #E6E3DD">
+          <span aria-hidden="true" style="flex:0 0 auto;margin-top:9px;width:6px;height:6px;background:#9C5C1C"></span>
+          <p style="font:400 17px/1.55 'Source Serif 4',Georgia,serif;color:#2B3348">Privat utredning og etterforskning</p>
+        </li>
+        <li style="display:flex;gap:14px;padding:14px 0;border-top:1px solid #E6E3DD">
+          <span aria-hidden="true" style="flex:0 0 auto;margin-top:9px;width:6px;height:6px;background:#9C5C1C"></span>
+          <p style="font:400 17px/1.55 'Source Serif 4',Georgia,serif;color:#2B3348">Risiko- og sårbarhetsanalyse</p>
+        </li>
+        <li style="display:flex;gap:14px;padding:14px 0;border-top:1px solid #E6E3DD;border-bottom:1px solid #E6E3DD">
+          <span aria-hidden="true" style="flex:0 0 auto;margin-top:9px;width:6px;height:6px;background:#9C5C1C"></span>
+          <p style="font:400 17px/1.55 'Source Serif 4',Georgia,serif;color:#2B3348">Møteromssikring</p>
+        </li>
+        <li style="display:flex;gap:14px;padding:14px 0;border-top:1px solid #E6E3DD;border-bottom:1px solid #E6E3DD">
+          <span aria-hidden="true" style="flex:0 0 auto;margin-top:9px;width:6px;height:6px;background:#9C5C1C"></span>
+          <p style="font:400 17px/1.55 'Source Serif 4',Georgia,serif;color:#2B3348">Sikkerhetsrådgivning, boligalarm, voldsalarm og kameraløsninger</p>
+        </li>
+      </ul>
+      <div style="margin-top:36px;padding:clamp(24px,3vw,36px);background:#F2F0EC;border-left:2px solid #9C5C1C">
+        <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#9C5C1C">For voldsutsatte</p>
+        <p style="margin-top:14px;font:400 clamp(17px,1.25vw,19px)/1.66 'Source Serif 4',Georgia,serif;color:#2B3348;text-wrap:pretty">PSS Securitas kan også bistå andre voldsutsatte enn våre medarbeidere med alle former for sikkerhetstjenester. Ta kontakt via <a href="mailto:post@omsorgsjuss.no?subject=Sikkerhet" style="color:#16213C;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#9C5C1C" style-hover="color:#9C5C1C">post@omsorgsjuss.no</a> og merk emnefeltet med «Sikkerhet» for et svært gunstig pristilbud innenfor Omsorgsjuss AS sin bedriftsavtale.</p>
+      </div>
+    </div>
+  </section>
+  <section style="background:#F2F0EC;border-top:1px solid #E6E3DD">
     <div style="max-width:1320px;margin:0 auto;padding:clamp(44px,5.5vw,80px) clamp(20px,5vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px">
       <div>
         <p style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#6A7186">Kontakt</p>
@@ -952,14 +1198,10 @@ ul,ol{padding:0;list-style:none}
         <p style="margin-top:12px"><a href="{{ telefonLenke }}" style="font:600 18px/1.4 Archivo,sans-serif;color:#16213C;text-decoration:none;border-bottom:1px solid #16213C">45 88 90 56</a></p>
       </div>
       <div>
-        <p style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#6A7186">Selskap</p>
+        <p style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#6A7186">Selskapsinformasjon</p>
         <p style="margin-top:16px;font:400 17px/1.6 'Source Serif 4',Georgia,serif;color:#2B3348"><a href="https://www.omsorgsjuss.no/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#9C5C1C" style-hover="color:#9C5C1C">Omsorgsjuss</a> AS</p>
-        <p style="margin-top:8px;font:400 13px/1.6 'IBM Plex Mono',monospace;color:#6A7186">Org.nr.: [fylles inn]</p>
-        <p style="margin-top:8px;font:400 13px/1.6 'IBM Plex Mono',monospace;color:#6A7186">Adresse: [fylles inn]</p>
-      </div>
-      <div>
-        <p style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#6A7186">Omsorgsjuss</p>
-        <p style="margin-top:16px"><a href="https://www.omsorgsjuss.no/" target="_blank" rel="noopener" style="font:500 17px/1.6 Archivo,sans-serif;color:#16213C">omsorgsjuss.no</a></p>
+        <p style="margin-top:8px;font:400 13px/1.6 'IBM Plex Mono',monospace;color:#6A7186">Org.nr.: 914 399 572</p>
+        <p style="margin-top:8px;font:400 13px/1.6 'IBM Plex Mono',monospace;color:#6A7186">Adresse: Enebakkveien 17A, 0657 Oslo</p>
       </div>
     </div>
   </section>
@@ -968,7 +1210,7 @@ ul,ol{padding:0;list-style:none}
 
 </main>
 
-<footer style="background:#0C1730;color:#F4F2EC">
+<footer style="background:#0C1730;color:#FCFBF9">
   <div style="max-width:1320px;margin:0 auto;padding:clamp(48px,6vw,88px) clamp(20px,5vw,72px) clamp(32px,4vw,48px)">
     <div style="display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);justify-content:space-between">
       <div style="min-width:0;max-width:420px">
@@ -977,29 +1219,48 @@ ul,ol{padding:0;list-style:none}
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:36px;flex:1 1 480px;min-width:0">
         <nav aria-label="Innhold">
           <p style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8D95AA">Innhold</p>
-          <a href="#/kurs" style="display:block;margin-top:16px;font:400 16px/1 Archivo,sans-serif;color:#F4F2EC;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">Kurs</a>
-          <a href="#/lokale-kurs" style="display:block;font:400 16px/1 Archivo,sans-serif;color:#F4F2EC;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">Lokale kurs</a>
-          <a href="#/innsikt" style="display:block;font:400 16px/1 Archivo,sans-serif;color:#F4F2EC;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">Innsikt</a>
-          <a href="#/rettspolitikk" style="display:block;font:400 16px/1 Archivo,sans-serif;color:#F4F2EC;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">Rettspolitikk</a>
-          <a href="#/om-oss" style="display:block;font:400 16px/1 Archivo,sans-serif;color:#F4F2EC;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">Om oss</a>
+          <a href="#/kurs" style="display:block;margin-top:16px;font:400 16px/1 Archivo,sans-serif;color:#FCFBF9;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">Kurs</a>
+          <a href="#/lokale-kurs" style="display:block;font:400 16px/1 Archivo,sans-serif;color:#FCFBF9;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">Lokale kurs</a>
+          <a href="#/innsikt" style="display:block;font:400 16px/1 Archivo,sans-serif;color:#FCFBF9;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">Innsikt</a>
+          <a href="#/rettspolitikk" style="display:block;font:400 16px/1 Archivo,sans-serif;color:#FCFBF9;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">Rettspolitikk</a>
+          <a href="#/om-oss" style="display:block;font:400 16px/1 Archivo,sans-serif;color:#FCFBF9;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">Om oss</a>
         </nav>
         <nav aria-label="Vilkår og personvern">
           <p style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8D95AA">Vilkår</p>
-          <a href="#/vilkar" style="display:block;margin-top:16px;font:400 16px/1.3 Archivo,sans-serif;color:#F4F2EC;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">Påmeldings- og bestillingsvilkår</a>
-          <a href="#/vilkar/personvern" style="display:block;font:400 16px/1.3 Archivo,sans-serif;color:#F4F2EC;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">Personvern</a>
-          <a href="https://www.omsorgsjuss.no/" target="_blank" rel="noopener" style="display:block;font:400 16px/1.3 Archivo,sans-serif;color:#F4F2EC;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">omsorgsjuss.no</a>
+          <a href="#/vilkar" style="display:block;margin-top:16px;font:400 16px/1.3 Archivo,sans-serif;color:#FCFBF9;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">Påmeldings- og bestillingsvilkår</a>
+          <a href="#/vilkar/personvern" style="display:block;font:400 16px/1.3 Archivo,sans-serif;color:#FCFBF9;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">Personvern</a>
+          <a href="https://www.omsorgsjuss.no/" target="_blank" rel="noopener" style="display:block;font:400 16px/1.3 Archivo,sans-serif;color:#FCFBF9;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">omsorgsjuss.no</a>
         </nav>
         <div>
           <p style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8D95AA">Kontakt</p>
-          <a href="{{ epostLenke }}" style="display:block;margin-top:16px;font:400 16px/1.3 Archivo,sans-serif;color:#F4F2EC;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">{{ kontaktEpostVis }}</a>
-          <a href="{{ telefonLenke }}" style="display:block;font:400 16px/1.3 Archivo,sans-serif;color:#F4F2EC;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">45 88 90 56</a>
+          <a href="{{ epostLenke }}" style="display:block;margin-top:16px;font:400 16px/1.3 Archivo,sans-serif;color:#FCFBF9;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">{{ kontaktEpostVis }}</a>
+          <a href="{{ telefonLenke }}" style="display:block;font:400 16px/1.3 Archivo,sans-serif;color:#FCFBF9;text-decoration:none;padding:8px 0" style-hover="color:#E0A868">45 88 90 56</a>
         </div>
       </div>
     </div>
-    <p style="margin-top:clamp(36px,4vw,64px);padding-top:20px;border-top:1px solid rgba(244,242,236,.18);font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#E0A868">En del av <a href="https://www.omsorgsjuss.no/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px" style-hover="color:#F4F2EC">Omsorgsjuss</a> AS · Org.nr. 914 399 572</p>
+    <p style="margin-top:clamp(36px,4vw,64px);padding-top:20px;border-top:1px solid rgba(244,242,236,.18);font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#E0A868">En del av <a href="https://www.omsorgsjuss.no/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px" style-hover="color:#FCFBF9">Omsorgsjuss</a> AS · Org.nr. 914 399 572</p>
   </div>
 </footer>
 
+
+<sc-if value="{{ visEpostModal }}" hint-placeholder-val="{{ false }}">
+  <div role="dialog" aria-modal="true" aria-label="Kontakt oss på e-post" onClick="{{ lukkEpostModal }}" style="position:fixed;inset:0;z-index:200;background:rgba(19,36,68,.62);display:flex;align-items:center;justify-content:center;padding:20px">
+    <div onClick="{{ stoppKlikk }}" style="width:100%;max-width:520px;background:#FCFBF9;border:1px solid #16213C;border-radius:2px;padding:clamp(26px,4vw,40px);box-shadow:0 24px 60px rgba(19,36,68,.28)">
+      <div style="display:flex;gap:20px;align-items:flex-start;justify-content:space-between">
+        <p style="font:400 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#9C5C1C">Be om tilbud</p>
+        <button type="button" onClick="{{ lukkEpostModal }}" aria-label="Lukk" style="flex:0 0 auto;width:44px;height:44px;margin:-12px -12px 0 0;background:none;border:0;cursor:pointer;font:400 22px/1 Archivo,sans-serif;color:#16213C" style-hover="color:#9C5C1C">×</button>
+      </div>
+      <h2 style="margin-top:14px;font:600 clamp(24px,2.4vw,32px)/1.1 Archivo,sans-serif;letter-spacing:-.02em;color:#16213C">Send oss en e-post</h2>
+      <p style="margin-top:16px;font:400 17px/1.6 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">Oppgi gjerne kommune, ønsket form (2-dagerskurs, dagskurs eller skreddersøm), omtrentlig antall deltakere og tidsrom.</p>
+      <p style="margin-top:24px;padding:18px 20px;background:#F2F0EC;border-left:2px solid #9C5C1C;font:600 clamp(18px,1.7vw,22px)/1.3 Archivo,sans-serif;color:#16213C;word-break:break-all">{{ kontaktEpostVis }}</p>
+      <div style="margin-top:26px;display:flex;flex-wrap:wrap;gap:12px">
+        <a href="{{ tilbudLenke }}" onClick="{{ lukkEpostModal }}" style="font:600 15px/1 Archivo,sans-serif;color:#FCFBF9;background:#132444;text-decoration:none;padding:18px 26px;border-radius:2px" style-hover="background:#9C5C1C">Åpne i e-postprogram</a>
+        <button type="button" onClick="{{ kopierEpost }}" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;background:none;padding:18px 26px;border:1px solid #16213C;border-radius:2px;cursor:pointer" style-hover="background:#F2F0EC">{{ kopierTekst }}</button>
+      </div>
+      <p style="margin-top:20px;font:400 16px/1.6 'Source Serif 4',Georgia,serif;color:#3C4459">Eller ring <a href="{{ telefonLenke }}" style="color:#16213C;text-decoration:none;border-bottom:1px solid #9C5C1C" style-hover="color:#9C5C1C">458 89 056</a>.</p>
+    </div>
+  </div>
+</sc-if>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;registrationUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;http://omsorgsjuss.kurs.ikks.no/Skjema/497&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Påmelding&quot;},&quot;kontaktEpost&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;post@omsorgsjuss.no&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Kontakt&quot;},&quot;stickyMobilCta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Påmelding&quot;}}">
 /* ============================================================
@@ -1113,7 +1374,7 @@ const RETTSPOLITIKK = [
   {
     tittel: 'Straffutmåling ved voldtekt – åpent brev til Høyesterett',
     type: 'Åpent brev',
-    aar: 'Januar 2025',
+    aar: 'Januar 2026',
     sammendrag: 'Voldsavsnittet sendte et åpent brev til Høyesterett i forbindelse med behandlingen av to storkammersaker om straffutmåling ved voldtekt. Initiativet rettet oppmerksomheten mot prinsipielle spørsmål om hvordan voldtekt behandles i rettssystemet, og hvilke konsekvenser utviklingen i straffutmålingspraksis kan få. Marianne Skattum bidro til det rettspolitiske innspillet.',
     url: null
   },
@@ -1132,13 +1393,6 @@ const RETTSPOLITIKK = [
     url: null
   },
   {
-    tittel: 'Kriminalisering av tvangskontroll',
-    type: 'Rettspolitisk arbeid',
-    aar: '06.02.2026',
-    sammendrag: 'Voldsavsnittet arbeider for at tvangskontroll i nære relasjoner skal omfattes tydeligere av straffelovgivningen. Dagens mishandlingsbestemmelse fanger etter vår vurdering ikke godt nok opp det systematiske mønsteret av kontrollhandlinger som samlet begrenser den utsattes frihet og livsutfoldelse. Vi har tatt til orde for en egen straffebestemmelse om tvangskontroll, og løftet problemstillingen både offentlig og overfor lovgiver.',
-    url: 'https://www.dagsavisen.no/debatt/tvangskontroll-dreper-na-ma-loven-endres/10185683'
-  },
-  {
     tittel: 'Tvangskontroll – lovendringsforslag løftet til Stortinget',
     type: 'Lovendringsforslag',
     aar: 'Mars 2026',
@@ -1151,6 +1405,20 @@ const RETTSPOLITIKK = [
     aar: 'April 2026',
     sammendrag: 'Voldsavsnittet sendte en formell henvendelse til Europarådet med anmodning om en vurdering av Norges håndtering av voldtektssaker opp mot Norges internasjonale menneskerettighetsforpliktelser. Initiativet er en annen del av det rettspolitiske arbeidet: å løfte spørsmål om norsk lovgivning og praksis til internasjonale kontroll- og menneskerettighetsorganer når det er relevant. Marianne Skattum bidro til initiativet.',
     url: null
+  },
+  {
+    tittel: 'Dialog med GREVIO om statsrapporteringen',
+    type: 'Internasjonal dialog',
+    aar: 'Mai 2026',
+    sammendrag: 'Voldsavsnittet har vært i dialog med GREVIO – Europarådets ekspertgruppe for arbeid mot vold mot kvinner og vold i nære relasjoner – i forbindelse med arbeidet med statsrapporteringen om Norges gjennomføring av Istanbulkonvensjonen.',
+    url: null
+  },
+  {
+    tittel: 'Staten beskytter voldsutøverne mens voldsutsatte lever i skjul',
+    type: 'Debattinnlegg',
+    aar: 'Juli 2026',
+    sammendrag: 'Debattinnlegg om hvordan dagens beskyttelsestiltak legger byrden på den voldsutsatte, som må leve skjult, mens voldsutøveren kan fortsette livet sitt uforstyrret.',
+    url: 'https://www.an.no/staten-beskytter-voldsutoverne-mens-voldsutsatte-lever-i-skjul/o/5-4-2410748'
   }
 ];
 
@@ -1270,6 +1538,16 @@ class Component extends DCLogic {
     });
   };
 
+  apneEpostModal = (e) => { if (e) e.preventDefault(); this.setState({ epostModal: true, kopiert: false }); };
+  lukkEpostModal = () => this.setState({ epostModal: false });
+  stoppKlikk = (e) => { if (e) e.stopPropagation(); };
+  kopierEpost = () => {
+    const epost = this.props.kontaktEpost || 'post@omsorgsjuss.no';
+    try { navigator.clipboard.writeText(epost); } catch (err) {}
+    this.setState({ kopiert: true });
+    setTimeout(() => this.setState({ kopiert: false }), 2200);
+  };
+
   toggleNav = () => this.setState(s => ({ navOpen: !s.navOpen }));
   closeNav = () => this.setState({ navOpen: false });
 
@@ -1320,7 +1598,13 @@ class Component extends DCLogic {
       kontaktEpostVis: epost,
       epostLenke: 'mailto:' + epost,
       tilbudLenke: 'mailto:' + epost + '?subject=Foresp%C3%B8rsel%20om%20lokalt%20kurs%20%E2%80%93%20forebygging%20og%20avverging%20av%20vold',
-      telefonLenke: 'tel:+4745889056'
+      telefonLenke: 'tel:+4745889056',
+      visEpostModal: !!s.epostModal,
+      apneEpostModal: this.apneEpostModal,
+      lukkEpostModal: this.lukkEpostModal,
+      stoppKlikk: this.stoppKlikk,
+      kopierEpost: this.kopierEpost,
+      kopierTekst: s.kopiert ? 'Kopiert!' : 'Kopier e-postadresse'
     };
   }
 }
