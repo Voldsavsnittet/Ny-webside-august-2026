@@ -239,7 +239,7 @@ ul,ol{padding:0;list-style:none}
             <p style="margin-top:20px;max-width:62ch;font:400 clamp(17px,1.2vw,19px)/1.6 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">{{ kurs.excerpt }}</p>
             <div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px">
               <a href="{{ kurs.href }}" style="font:600 15px/1 Archivo,sans-serif;color:#FCFBF9;background:#132444;text-decoration:none;padding:18px 28px;border-radius:2px" style-hover="background:#9C5C1C">Se kurset</a>
-              <a href="{{ kurs.registrationUrl }}" target="_blank" rel="noopener" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:18px 28px;border:1px solid #16213C;border-radius:2px" style-hover="background:#F2F0EC">Meld deg på</a>
+              <a href="{{ kurs.registrationUrl }}" target="_blank" rel="noopener" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:18px 28px;border:1px solid #16213C;border-radius:2px" style-hover="background:#F2F0EC">{{ kurs.ctaTekst }}</a>
             </div>
           </div>
           <dl style="flex:1 1 260px;min-width:0;max-width:360px;margin:0">
@@ -344,7 +344,7 @@ ul,ol{padding:0;list-style:none}
           <p style="margin-top:20px;max-width:62ch;font:400 clamp(17px,1.2vw,19px)/1.62 'Source Serif 4',Georgia,serif;color:#3C4459;text-wrap:pretty">{{ kurs.excerpt }}</p>
           <div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px">
             <a href="{{ kurs.href }}" style="font:600 15px/1 Archivo,sans-serif;color:#FCFBF9;background:#132444;text-decoration:none;padding:18px 28px;border-radius:2px" style-hover="background:#9C5C1C">Se kurset</a>
-            <a href="{{ kurs.registrationUrl }}" target="_blank" rel="noopener" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:18px 28px;border:1px solid #16213C;border-radius:2px" style-hover="background:#F2F0EC">Meld deg på</a>
+            <a href="{{ kurs.registrationUrl }}" target="_blank" rel="noopener" style="font:600 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:18px 28px;border:1px solid #16213C;border-radius:2px" style-hover="background:#F2F0EC">{{ kurs.ctaTekst }}</a>
           </div>
         </div>
         <dl style="flex:1 1 260px;min-width:0;max-width:360px;margin:0">
@@ -483,8 +483,8 @@ ul,ol{padding:0;list-style:none}
             </div>
           </sc-for>
         </dl>
-        <a href="{{ kurs.registrationUrl }}" target="_blank" rel="noopener" style="display:block;margin-top:26px;text-align:center;font:600 16px/1 Archivo,sans-serif;color:#0C1730;background:#E0A868;text-decoration:none;padding:20px 24px;border-radius:2px" style-hover="background:#FCFBF9">Meld deg på</a>
-        <p style="margin-top:14px;font:400 12px/1.55 'IBM Plex Mono',monospace;color:#C9C4B6">Påmelding skjer i <a href="https://www.omsorgsjuss.no/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px" style-hover="color:#E0A868">Omsorgsjuss</a>' påmeldingssystem. Ikke bindende før påmeldingsfristen.</p>
+        <a href="{{ kurs.registrationUrl }}" target="_blank" rel="noopener" style="display:block;margin-top:26px;text-align:center;font:600 16px/1 Archivo,sans-serif;color:#0C1730;background:#E0A868;text-decoration:none;padding:20px 24px;border-radius:2px" style-hover="background:#FCFBF9">{{ kurs.ctaTekst }}</a>
+        <sc-if value="{{ kurs.paameldingApen }}" hint-placeholder-val="{{ false }}"><p style="margin-top:14px;font:400 12px/1.55 'IBM Plex Mono',monospace;color:#C9C4B6">Påmelding skjer i <a href="https://www.omsorgsjuss.no/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px" style-hover="color:#E0A868">Omsorgsjuss</a>' påmeldingssystem. Ikke bindende før påmeldingsfristen.</p></sc-if><sc-if value="{{ kurs.paameldingStengt }}" hint-placeholder-val="{{ true }}"><p style="margin-top:14px;font:400 12px/1.55 'IBM Plex Mono',monospace;color:#C9C4B6">Vi gir deg beskjed når ny dato er satt og påmeldingen åpner.</p></sc-if>
       </div>
       <nav aria-label="På denne siden" style="margin-top:28px;border-top:1px solid #16213C;padding-top:18px">
         <a href="#program" style="display:block;font:500 15px/1 Archivo,sans-serif;color:#16213C;text-decoration:none;padding:12px 0;border-bottom:1px solid #E6E3DD" style-hover="color:#9C5C1C">Program</a>
@@ -499,7 +499,7 @@ ul,ol{padding:0;list-style:none}
         <p style="font:500 14px/1.3 Archivo,sans-serif;color:#FCFBF9;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ kurs.dateLabel }}</p>
         <p style="font:400 11px/1.3 'IBM Plex Mono',monospace;color:#C9C4B6">{{ kurs.price }} · {{ kurs.location }}</p>
       </div>
-      <a href="{{ kurs.registrationUrl }}" target="_blank" rel="noopener" style="flex:none;font:600 15px/1 Archivo,sans-serif;color:#0C1730;background:#E0A868;text-decoration:none;padding:16px 22px;border-radius:2px;min-height:48px;display:flex;align-items:center">Meld deg på</a>
+      <a href="{{ kurs.registrationUrl }}" target="_blank" rel="noopener" style="flex:none;font:600 15px/1 Archivo,sans-serif;color:#0C1730;background:#E0A868;text-decoration:none;padding:16px 22px;border-radius:2px;min-height:48px;display:flex;align-items:center">{{ kurs.ctaTekst }}</a>
     </div>
   </sc-if>
 </div>
@@ -997,7 +997,7 @@ ul,ol{padding:0;list-style:none}
 
         <article style="display:flex;flex-wrap:wrap;gap:clamp(24px,3.5vw,56px);padding:clamp(32px,4vw,56px) 0;border-top:1px solid #E6E3DD;border-bottom:1px solid #16213C">
           <div style="flex:0 1 240px;min-width:180px">
-            <img src="assets/portrett-silhuett-v2.png" alt="Portrett av Nina" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border:1px solid #E6E3DD;background:#F2F0EC" />
+            <img src="assets/portrett-silhuett.png" alt="Portrett av Nina" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border:1px solid #E6E3DD;background:#F2F0EC" />
             <p style="margin-top:16px;font:400 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#9C5C1C">Erfaringskonsulent</p>
           </div>
           <div style="flex:1 1 460px;min-width:0;max-width:76ch">
@@ -1261,11 +1261,12 @@ const KURS = [{
   excerpt: 'Kommunen har plikt til å forebygge, avdekke og avverge vold og overgrep. Kurset går konkret gjennom hva hver enkelt plikt krever, hvilke terskler som gjelder, og hva den ansatte skal gjøre.',
   startDate: '2026-11-10',
   endDate: '2026-11-11',
-  dateLabel: '10.–11. november 2026',
+  dateLabel: 'Ny dato kommer – tidlig 2027',
+  paameldingApen: false, // sett til true og oppdater datoene når ny dato er klar
   location: 'Oslo',
   price: '6 200 kr',
-  registrationDeadline: '27. oktober 2026',
-  availabilityStatus: 'Ledige plasser',
+  registrationDeadline: 'Kunngjøres sammen med ny dato',
+  availabilityStatus: 'Ny dato kommer',
   registrationUrl: 'http://omsorgsjuss.kurs.ikks.no/Skjema/497',
   prerequisites: 'Ingen krav til forkunnskaper.',
   instructors: [
@@ -1273,8 +1274,8 @@ const KURS = [{
     { name: 'Marianne Skattum', role: 'Kursholder' }
   ],
   statusNotes: [
-    'Kurset settes opp. Vi bekrefter plass til alle påmeldte så snart vi vet at det er nok deltakere, og senest like etter påmeldingsfristen 27. oktober.',
-    'Påmeldingen er ikke bindende før fristen, og avmelding skjer fritt frem til da.'
+    'Kurset er flyttet til nyåret. Ny dato publiseres her så snart den er satt.',
+    'Vil du ha beskjed når påmeldingen åpner? Send oss en e-post, så gir vi deg beskjed først.'
   ],
   description: [
     { heading: 'Pliktene og tersklene', paras: [
@@ -1547,7 +1548,7 @@ class Component extends DCLogic {
       { label: 'Pris', value: k.price },
       { label: 'Påmeldingsfrist', value: k.registrationDeadline },
       { label: 'Ledige plasser', value: k.availabilityStatus === 'Ledige plasser' ? 'Ja' : k.availabilityStatus }
-    ];
+    ].filter(f => k.paameldingApen !== false || f.label !== 'Ledige plasser');
   }
 
   renderVals() {
@@ -1558,7 +1559,12 @@ class Component extends DCLogic {
 
     const kursListe = KURS.map(k => Object.assign({}, k, {
       href: '#/kurs/' + k.slug,
-      registrationUrl: paameldingsUrl || k.registrationUrl,
+      registrationUrl: k.paameldingApen === false
+        ? 'mailto:' + epost + '?subject=' + encodeURIComponent('Gi meg beskjed om ny dato: ' + k.title)
+        : (paameldingsUrl || k.registrationUrl),
+      paameldingApen: k.paameldingApen !== false,
+      paameldingStengt: k.paameldingApen === false,
+      ctaTekst: k.paameldingApen === false ? 'Gi meg beskjed om ny dato' : 'Meld deg på',
       facts: this.fakta(k)
     }));
     const valgt = kursListe.find(k => k.slug === s.slug) || kursListe[0];
